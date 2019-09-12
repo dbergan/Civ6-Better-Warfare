@@ -27,10 +27,19 @@
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="GameData1.sql">
+    <Content Include="GameDataEarly.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="GameDataLate.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="LOC.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UnitAbilities.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UnitUpdates.sql">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
