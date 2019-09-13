@@ -1,3 +1,9 @@
+-- Baseline support and flanking is 1 CS because modifiers are all in terms of percentages
+UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
+-- Baseline damage multipler to 100 because modifier is in terms of percentages
+UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;  -- standard = 10 (also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
+
+
 DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
 DELETE FROM TypeTags WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
 DELETE FROM UnitAbilities WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
@@ -15,6 +21,38 @@ DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI
 
 -- Remove these classes altogether (the units will be re-classed)
 DELETE FROM TypeTags WHERE Tag = 'CLASS_ANTI_CAVALRY' OR Tag LIKE '%AUTOMATIC_GUN%' ;
+
+CREATE TABLE BW_UnitClasses (NewClass VARCHAR) ;
+
+INSERT INTO BW_NewUnitClasses
+(ClassName)
+VALUES
+('RECON'),
+('AIR_ATTACK'),
+('AIR_BOMBER'),
+('AIR_FIGHTER'),
+('ANTIAIR'),
+('DEFENSIVE_GUN'),
+('ELEPHANT'),
+('GIANT_DEATH_ROBOT'),
+('HEAVY_CAVALRY'),
+('HEAVY_INFANTRY'),
+('LIGHT_CAVALRY'),
+('LIGHT_INFANTRY'),
+('MARINE'),
+('MONK'),
+('NAVAL_BOMBARD'),
+('NAVAL_CARRIER'),
+('NAVAL_MELEE'),
+('NAVAL_RAIDER'),
+('NAVAL_RANGED'),
+('RANGED'),
+('RECON'),
+('SIEGE'),
+('SUPPORT') ;
+
+
+
 
 
 -- Remove these classes from units (they'll be re-added properly in GameDataLate.sql)
