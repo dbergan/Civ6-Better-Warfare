@@ -1,6 +1,6 @@
--- Baseline support and flanking is 1 CS because modifiers are all in terms of percentages
+-- Set baseline support and flanking is 1 CS because modifiers are all in terms of percentages
 UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
--- Baseline damage multipler to 100 because modifier is in terms of percentages
+-- Set baseline damage multipler to 100 because modifier is in terms of percentages
 UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;  -- standard = 10 (also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
 
 
@@ -21,6 +21,41 @@ DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI
 
 -- Remove these classes altogether (the units will be re-classed)
 DELETE FROM TypeTags WHERE Tag = 'CLASS_ANTI_CAVALRY' OR Tag LIKE '%AUTOMATIC_GUN%' ;
+
+
+-- Remove these classes from units (they'll be re-added properly in GameDataLate.sql)
+DELETE FROM TypeTags WHERE Type LIKE 'Unit%' AND (
+Tag LIKE 'CLASS_AIRCRAFT'
+OR Tag LIKE 'CLASS_AIR_ATTACK'
+OR Tag LIKE 'CLASS_AIR_BOMBER'
+OR Tag LIKE 'CLASS_AIR_FIGHTER'
+OR Tag LIKE 'CLASS_ANTI_AIR'
+OR Tag LIKE 'CLASS_ANTI_CAVALRY'
+OR Tag LIKE 'CLASS_AUTOMATIC_GUN'
+OR Tag LIKE 'CLASS_GIANT_DEATH_ROBOT'
+
+OR Tag LIKE 'CLASS_HEAVY_CAVALRY'
+OR Tag LIKE 'CLASS_LIGHT_CAVALRY'
+OR Tag LIKE 'CLASS_LK_AUTOMATIC_GUN_ANTICAV'
+OR Tag LIKE 'CLASS_LK_AUTOMATIC_GUN_CAV'
+OR Tag LIKE 'CLASS_LK_AUTOMATIC_GUN_MELEE'
+OR Tag LIKE 'CLASS_MARINE'
+OR Tag LIKE 'CLASS_MELEE'
+OR Tag LIKE 'CLASS_MONK'
+OR Tag LIKE 'CLASS_NAVAL_BOMBARD'
+OR Tag LIKE 'CLASS_NAVAL_CARRIER'
+OR Tag LIKE 'CLASS_NAVAL_MELEE'
+OR Tag LIKE 'CLASS_NAVAL_RAIDER'
+OR Tag LIKE 'CLASS_NAVAL_RANGED'
+OR Tag LIKE 'CLASS_RANGED'
+OR Tag LIKE 'CLASS_RANGED_CAVALRY'
+
+OR Tag LIKE 'CLASS_RECON'
+OR Tag LIKE 'CLASS_SIEGE'
+OR Tag LIKE 'CLASS_SUPPORT'
+OR Tag LIKE 'CLASS_WARRIOR_MONK');
+
+
 
 CREATE TABLE BW_UnitClasses (NewClass VARCHAR) ;
 
@@ -49,43 +84,10 @@ VALUES
 ('RANGED'),
 ('RECON'),
 ('SIEGE'),
-('SUPPORT') ;
+('SUPPORT')
+;
 
 
-
-
-
--- Remove these classes from units (they'll be re-added properly in GameDataLate.sql)
-DELETE FROM TypeTags WHERE Type LIKE 'Unit%' AND (
-Tag LIKE 'CLASS_ANTI_AIR'
-OR Tag LIKE 'CLASS_ANTI_CAVALRY'
-OR Tag LIKE 'CLASS_MELEE'
-OR Tag LIKE 'CLASS_HEAVY_CAVALRY'
-OR Tag LIKE 'CLASS_LIGHT_CAVALRY'
-OR Tag LIKE 'CLASS_RECON'
-OR Tag LIKE 'CLASS_RANGED'
-OR Tag LIKE 'CLASS_SUPPORT'
-OR Tag LIKE 'CLASS_MONK'
-OR Tag LIKE 'CLASS_SIEGE'
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-OR Tag LIKE ''
-);
 
 -- Prep for the Excel SQLs
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
