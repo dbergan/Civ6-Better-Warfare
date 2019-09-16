@@ -1,7 +1,11 @@
--- Set baseline support and flanking is 1 CS because modifiers are all in terms of percentages
+-- Set baseline support and flanking is 1 CS because modifiers are all in terms of percentages (standard = 2)
 UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
--- Set baseline damage multipler to 100 because modifier is in terms of percentages
-UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;  -- standard = 10 (also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
+
+-- Set baseline damage multipler to 100 because modifier is in terms of percentages (standard = 10; also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
+UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;
+
+-- Remove all MandatoryObsoletes
+UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
 
 DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
@@ -16,7 +20,7 @@ DELETE FROM TypeTags WHERE Type = 'ABILITY_BYPASS_COMBAT_UNIT' AND Tag != 'CLASS
 -- Remove the +1 movement for Tanks & Modern Armor on flat terrain (seriously, if we're going to use this on modern units, it would apply to a lot more than just tanks)
 DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' AND (Type = 'UNIT_TANK' OR Type = 'UNIT_MODERN_ARMOR');
 
--- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure that there's really any "anti-spear" units...)
+-- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure how a unit would be "anti-spear"...)
 DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI_SPEAR' ;
 
 -- Remove these classes altogether (the units will be re-classed)
@@ -88,9 +92,7 @@ VALUES
 ;
 
 
-
 -- Prep for the Excel SQLs
-UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 DELETE FROM Units_XP2 ;
 DELETE FROM UnitReplaces ;
 DELETE FROM UnitUpgrades ;
