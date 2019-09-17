@@ -1,3 +1,4 @@
+/*
 -- Set baseline support and flanking is 1 CS because modifiers are all in terms of percentages (standard = 2)
 UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
 
@@ -7,11 +8,10 @@ UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULT
 -- Remove all MandatoryObsoletes
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
-
-DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
-DELETE FROM TypeTags WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
-DELETE FROM UnitAbilities WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
 DELETE FROM UnitAbilityModifiers WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM UnitAbilities WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM TypeTags WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
 
 -- Priority Attack is "ABILITY_BYPASS_COMBAT_UNIT"
 -- Restrict that ability to only snipers (e.g. Spec Ops)
@@ -58,15 +58,14 @@ OR Tag LIKE 'CLASS_RECON'
 OR Tag LIKE 'CLASS_SIEGE'
 OR Tag LIKE 'CLASS_SUPPORT'
 OR Tag LIKE 'CLASS_WARRIOR_MONK');
+*/
 
-
-
-CREATE TABLE BW_UnitClasses (NewClass VARCHAR) ;
+DROP TABLE IF EXISTS BW_NewUnitClasses ;
+CREATE TABLE BW_NewUnitClasses (ClassName VARCHAR) ;
 
 INSERT INTO BW_NewUnitClasses
 (ClassName)
 VALUES
-('RECON'),
 ('AIR_ATTACK'),
 ('AIR_BOMBER'),
 ('AIR_FIGHTER'),
@@ -91,9 +90,9 @@ VALUES
 ('SUPPORT')
 ;
 
-
+/*
 -- Prep for the Excel SQLs
 DELETE FROM Units_XP2 ;
 DELETE FROM UnitReplaces ;
 DELETE FROM UnitUpgrades ;
-
+*/

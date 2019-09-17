@@ -1,4 +1,8 @@
 INSERT INTO Types (Type, Kind) 
+VALUES ('BW_TEST', 'KIND_PROMOTION_CLASS') ;
+
+
+INSERT INTO Types (Type, Kind) 
 SELECT 'BW_PROMOTION_CLASS_' || ClassName, 'KIND_PROMOTION_CLASS' FROM BW_NewUnitClasses ;
 
 INSERT INTO UnitPromotionClasses (PromotionClassType, Name) 
