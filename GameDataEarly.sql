@@ -1,4 +1,3 @@
-/*
 -- Set baseline support and flanking is 1 CS because modifiers are all in terms of percentages (standard = 2)
 UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
 
@@ -58,7 +57,7 @@ OR Tag LIKE 'CLASS_RECON'
 OR Tag LIKE 'CLASS_SIEGE'
 OR Tag LIKE 'CLASS_SUPPORT'
 OR Tag LIKE 'CLASS_WARRIOR_MONK');
-*/
+
 
 DROP TABLE IF EXISTS BW_NewUnitClasses ;
 CREATE TABLE BW_NewUnitClasses (ClassName VARCHAR) ;
@@ -75,6 +74,7 @@ VALUES
 ('GIANT_DEATH_ROBOT'),
 ('HEAVY_CAVALRY'),
 ('HEAVY_INFANTRY'),
+('LAND_RANGED'),
 ('LIGHT_CAVALRY'),
 ('LIGHT_INFANTRY'),
 ('MARINE'),
@@ -84,15 +84,13 @@ VALUES
 ('NAVAL_MELEE'),
 ('NAVAL_RAIDER'),
 ('NAVAL_RANGED'),
-('RANGED'),
 ('RECON'),
 ('SIEGE'),
 ('SUPPORT')
 ;
 
-/*
+
 -- Prep for the Excel SQLs
 DELETE FROM Units_XP2 ;
 DELETE FROM UnitReplaces ;
 DELETE FROM UnitUpgrades ;
-*/

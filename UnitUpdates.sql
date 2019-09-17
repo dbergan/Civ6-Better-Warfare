@@ -257,53 +257,39 @@ UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_AIR_BOMBER', BaseMoves = 1
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HEAVY_CHARIOT', 1, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HEAVY_CHARIOT', 1, NULL, 0) ;
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CHARIOT_ARCHER', 1, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_EGYPTIAN_CHARIOT_ARCHER', 1, NULL, NULL) ;
-
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSEMAN', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MACEDONIAN_HETAIROI', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ROMAN_EQUITE', 10, NULL, NULL) ;
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SWORDSMAN', 20, NULL, NULL) ;
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_EGYPTIAN_KHOPESH', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_KONGO_SHIELD_BEARER', 5, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MACEDONIAN_HYPASPIST', 5, NULL, NULL) ;
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PERSIAN_IMMORTAL', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ROMAN_LEGION', 10, NULL, NULL) ;
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_INDONESIAN_KRIS_SWORDSMAN', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSE_ARCHER', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCYTHIAN_HORSE_ARCHER', 5, NULL, NULL) ;
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PHOENICIA_NUMIDIAN_CAVALRY', 10, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CHARIOT_ARCHER', 1, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_EGYPTIAN_CHARIOT_ARCHER', 1, NULL, 0) ;
 
 
 
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSEMAN', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MACEDONIAN_HETAIROI', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ROMAN_EQUITE', 10, NULL, 0) ;
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARMORED_HORSEMAN', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PERSIAN_CATAPHRACT', 10, NULL, NULL) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SWORDSMAN', 20, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_EGYPTIAN_KHOPESH', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_KONGO_SHIELD_BEARER', 5, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MACEDONIAN_HYPASPIST', 5, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PERSIAN_IMMORTAL', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ROMAN_LEGION', 10, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_INDONESIAN_KRIS_SWORDSMAN', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSE_ARCHER', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCYTHIAN_HORSE_ARCHER', 5, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PHOENICIA_NUMIDIAN_CAVALRY', 10, NULL, 0) ;
 
 
 
 
-
-
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GEORGIAN_KHEVSURETI', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_LONGSWORDSMAN', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ELEANOR_TEMPLAR', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_JAPANESE_SAMURAI', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_NORWEGIAN_BERSERKER', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCOTTISH_GALLOWGLASS', 10, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARMORED_HORSEMAN', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PERSIAN_CATAPHRACT', 10, NULL, 0) ;
 
 
 
@@ -311,80 +297,94 @@ INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, Resource
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_KALANDOZO', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MONGOLIAN_KESHIG', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MOUNTED_CROSSBOW', 20, NULL, NULL) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GEORGIAN_KHEVSURETI', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_LONGSWORDSMAN', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ELEANOR_TEMPLAR', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_JAPANESE_SAMURAI', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_NORWEGIAN_BERSERKER', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCOTTISH_GALLOWGLASS', 10, NULL, 0) ;
 
 
 
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_COURSER', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RUSSIAN_DRUZHINA', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_BLACK_ARMY', 10, NULL, NULL) ;
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_KNIGHT', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARABIAN_MAMLUK', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRENCH_GENDARME', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GEORGIAN_TADZREULI', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MALI_MANDEKALU_CAVALRY', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_OTTOMAN_SIPAHI', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCYTHIAN_AMAZON', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_POLISH_HUSSAR', 10, NULL, NULL) ;
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MUSKETMAN', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_DUTCH_SCHUTTERIJ', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SPANISH_CONQUISTADOR', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SULEIMAN_JANISSARY', 10, NULL, NULL) ;
-
-
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HARQUEBUSIER', 20, NULL, NULL) ;
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_REITER', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_BOMBARD', 20, NULL, NULL) ;
-
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RIFLEMAN', 20, NULL, NULL) ;
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CAVALRY', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CREE_OTEHTAPIW', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_HUSZAR', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_POLISH_UHLAN', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RUSSIAN_COSSACK', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SWEDEN_HAKKAPELIITTA', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CUIRASSIER', 20, NULL, NULL) ;
-
-
-
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ENGLISH_REDCOAT', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRENCH_GARDE_IMPERIALE', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_INDIAN_SEPOY', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSE_ARTILLERY', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RIFLED_CANNON', 20, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_KALANDOZO', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MONGOLIAN_KESHIG', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MOUNTED_CROSSBOW', 20, NULL, 0) ;
 
 
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_LANCER', 20, NULL, NULL) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_COURSER', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RUSSIAN_DRUZHINA', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_BLACK_ARMY', 10, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_KNIGHT', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARABIAN_MAMLUK', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRENCH_GENDARME', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GEORGIAN_TADZREULI', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MALI_MANDEKALU_CAVALRY', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_OTTOMAN_SIPAHI', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SCYTHIAN_AMAZON', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_POLISH_HUSSAR', 10, NULL, 0) ;
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MUSKETMAN', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_DUTCH_SCHUTTERIJ', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SPANISH_CONQUISTADOR', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SULEIMAN_JANISSARY', 10, NULL, 0) ;
+
+
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HARQUEBUSIER', 20, NULL, 0) ;
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_REITER', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_BOMBARD', 20, NULL, 0) ;
+
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RIFLEMAN', 20, NULL, 0) ;
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CAVALRY', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CREE_OTEHTAPIW', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HUNGARY_HUSZAR', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_POLISH_UHLAN', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RUSSIAN_COSSACK', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SWEDEN_HAKKAPELIITTA', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_CUIRASSIER', 20, NULL, 0) ;
+
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ENGLISH_REDCOAT', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRENCH_GARDE_IMPERIALE', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_INDIAN_SEPOY', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_HORSE_ARTILLERY', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RIFLED_CANNON', 20, NULL, 0) ;
+
+
+
+
+
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_LANCER', 20, NULL, 0) ;
 
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_EARLY_LIGHT_TANK', 1, 'RESOURCE_OIL', 1) ;
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MOUNTED_RIFLES', 20, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MOUNTED_RIFLES', 20, NULL, 0) ;
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARMORED_CAR', 1, 'RESOURCE_OIL', 1) ;
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_LANDSHIP', 1, 'RESOURCE_OIL', 1) ;
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARTILLERY', 1, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARTILLERY', 1, NULL, 0) ;
 
 
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ARMORED_INFANTRY', 1, 'RESOURCE_OIL', 1) ;
@@ -419,7 +419,7 @@ INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, Resource
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SP_GUN', 1, 'RESOURCE_OIL', 1) ;
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_MODERN_ARMOR', 50, 'RESOURCE_OIL', 1) ;
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ROCKET_ARTILLERY', 0, 'RESOURCE_OIL', 1) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_UAV', 40, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_UAV', 40, NULL, 0) ;
 
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GIANT_DEATH_ROBOT', 50, 'RESOURCE_URANIUM', 3) ;
 
@@ -433,19 +433,19 @@ INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, Resource
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GALLEASS', 10, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GALLEON', 10, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GALLEASS', 10, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_GALLEON', 10, NULL, 0) ;
 
 
 
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PRIVATEER', 20, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_PRIVATEER', 20, NULL, 0) ;
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRIGATE', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_DE_ZEVEN_PROVINCIEN', 10, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_FRIGATE', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_DE_ZEVEN_PROVINCIEN', 10, NULL, 0) ;
 
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SHIP_OF_THE_LINE', 20, NULL, NULL) ;
-INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ENGLISH_SHIP_OF_THE_LINE', 20, NULL, NULL) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_SHIP_OF_THE_LINE', 20, NULL, 0) ;
+INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_ENGLISH_SHIP_OF_THE_LINE', 20, NULL, 0) ;
 
 
 INSERT INTO Units_XP2 (UnitType, ResourceCost, ResourceMaintenanceType, ResourceMaintenanceAmount) VALUES ('UNIT_RAIDER', 20, 'RESOURCE_COAL', 1) ;
