@@ -7,10 +7,8 @@ UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULT
 -- Remove all MandatoryObsoletes
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
-DELETE FROM UnitAbilityModifiers WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
-DELETE FROM UnitAbilities WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
-DELETE FROM TypeTags WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
-DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+-- Change starting unit from Warrior to Scout
+UPDATE MajorStartingUnits SET Unit = 'UNIT_SCOUT' WHERE Unit = 'UNIT_WARRIOR' AND Era = 'ERA_ANCIENT' ;
 
 -- Priority Attack is "ABILITY_BYPASS_COMBAT_UNIT"
 -- Restrict that ability to only snipers (e.g. Spec Ops)
@@ -21,6 +19,15 @@ DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' AND (Type = 'UNIT_TANK' O
 
 -- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure how a unit would be "anti-spear"...)
 DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI_SPEAR' ;
+
+
+
+-- Remove abilities we won't use
+DELETE FROM UnitAbilityModifiers WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM UnitAbilities WHERE UnitAbilityType = 'ABILITY_NAVAL_BOMBARD' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_RAIDER' OR UnitAbilityType = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM TypeTags WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+DELETE FROM Types WHERE Type = 'ABILITY_NAVAL_BOMBARD' OR Type = 'ABILITY_ATTACK_SUB_RAIDER' OR Type = 'ABILITY_ATTACK_SUB_SURFACE_WARSHIP' ;
+
 
 -- Remove these classes altogether (the units will be re-classed)
 DELETE FROM TypeTags WHERE Tag = 'CLASS_ANTI_CAVALRY' OR Tag LIKE '%AUTOMATIC_GUN%' ;

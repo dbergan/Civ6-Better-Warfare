@@ -46,7 +46,7 @@ VALUES
 ('BW_PROMOTION_RECON_',	'KIND_PROMOTION'),
 
 INSERT INTO UnitPromotions
-(UnitPromotionType,					Level,	Column,	PromotionClass,							Name,										Description) 
+(UnitPromotionType,							Level,	Column,	PromotionClass,							Name,										Description) 
 VALUES
 ('BW_PROMOTION_RECON_SEE_THROUGH_TERRAIN',	1,		1,		'BW_PROMOTION_CLASS_RECON',	'BW_LOC_PROMOTION_RECON__NAME',	'BW_LOC_PROMOTION_RECON__DESCRIPTION'),
 ('BW_PROMOTION_RECON_MORE_MOVEMENT',		1,		3,		'BW_PROMOTION_CLASS_RECON',	'BW_LOC_PROMOTION_RECON__NAME',	'BW_LOC_PROMOTION_RECON__DESCRIPTION'),

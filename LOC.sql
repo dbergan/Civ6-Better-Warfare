@@ -3,6 +3,20 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
+('BW_LOC_RECON_GENERAL', '[NEWLINE][NEWLINE]Recon units are not strong attackers, but instead excel at gathering information. They ignore terrain costs, and, when promoted, can slip into enemy territory, evade zones of control, and hide from opponents.', 'en_US'),
+('BW_LOC_HEAVY_INFANTRY_GENERAL', '[NEWLINE][NEWLINE]Heavy Infantry is your bulldozer, very powerful, but slow and expensive. Heavy Infantry units:[NEWLINE][ICON_Bullet]Have the strongest combat values of the era[NEWLINE][ICON_Bullet]Cost 1 population[NEWLINE][ICON_Bullet]Cannot be upgraded[NEWLINE][ICON_Bullet]Get an inherent bonus when defending[NEWLINE][ICON_Bullet]When they attack, they force most units to retreat (Light Infantry, Light Cavalry, Recon, Ranged, Siege, and Warrior Monks)[NEWLINE][ICON_Bullet]Receive significant support and flanking bonuses from allied Light Cavalry, Light Infantry, and Land Ranged units[NEWLINE][ICON_Bullet]Are vulnerable to harrassment from enemy Light Cavalry, Light Infantry, and Land Ranged units, but none of these can withstand a direct attack', 'en_US'),
+
+('BW_LOC_LIGHT_INFANTRY_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
+('BW_LOC_LIGHT_CAVALRY_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
+('BW_LOC_HEAVY_CAVALRY_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
+('BW_LOC_LAND_RANGED_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
+
+('BW_LOC_NAVAL_MELEE_GENERAL', '[NEWLINE][NEWLINE]Naval Melee units are great at attacking other ships. They also can attack coastal cities, but their damage is reduced by 85% when the city has walls. They don''t have a ranged attack and cannot attack land units.', 'en_US'),
+('BW_LOC_NAVAL_RANGED_GENERAL', '[NEWLINE][NEWLINE]Naval Ranged units have a [ICON_Ranged] Ranged Attack that can attack cities, encampments, sea and land units. However, the attack is increased against land units and decreased against sea unit. Unwalled cities take normal damage, but walled cities only take half the damage done by Naval Ranged units.', 'en_US'),
+('BW_LOC_NAVAL_RAIDER_GENERAL', '[NEWLINE][NEWLINE]Naval Raider units are tricky. They fight dirty. They make short [ICON_Ranged] Ranged Attacks and can move after attacking. This attack is stronger against boats, especially Naval Melee units, and does normal damage against other targets. Walled cities only take half damage from Naval Raiders.[NEWLINE][NEWLINE]Often Naval Raiders are hidden to the enemy (unless adjacent to them), but enemy Naval Raiders can detect them within their sight range. They can also pillage shore tiles with their coastal raid ability.', 'en_US'),
+('BW_LOC_NAVAL_BOMBARD_GENERAL', '[NEWLINE][NEWLINE]Naval Bombard units are designed to bombard cities and encampments, doing full damage with their [ICON_Ranged] Ranged Attack even when they are walled. However, their attack is significantly less effective when used on land and sea units.', 'en_US'),
+
+
 ('BW_LOC_PROMOTION_CLASS_AIR_ATTACK_NAME', 'Air Ground-Attack', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_AIR_BOMBER_NAME', 'Air Bomber', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_AIR_FIGHTER_NAME', 'Air Fighter', 'en_US'),
@@ -12,6 +26,7 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_CLASS_GIANT_DEATH_ROBOT_NAME', 'Giant Death Robot', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_HEAVY_CAVALRY_NAME', 'Heavy Cavalry', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_HEAVY_INFANTRY_NAME', 'Heavy Infantry', 'en_US'),
+('BW_LOC_PROMOTION_CLASS_LAND_RANGED_NAME', 'Land Ranged', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_LIGHT_CAVALRY_NAME', 'Light Cavalry', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_LIGHT_INFANTRY_NAME', 'Light Infantry', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_MARINE_NAME', 'Marine', 'en_US'),
@@ -21,7 +36,6 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_CLASS_NAVAL_MELEE_NAME', 'Naval Melee', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_NAVAL_RAIDER_NAME', 'Naval Raider', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_NAVAL_RANGED_NAME', 'Naval Ranged', 'en_US'),
-('BW_LOC_PROMOTION_CLASS_RANGED_NAME', 'Land Ranged', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_RECON_NAME', 'Recon', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_SIEGE_NAME', 'Siege', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_SUPPORT_NAME', 'Support', 'en_US'),
@@ -171,13 +185,13 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_NAVAL_RANGED__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_NAVAL_RANGED__NAME', '', 'en_US'),
 
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
+('BW_LOC_PROMOTION_LAND_RANGED__NAME', '', 'en_US'),
 
 ('BW_LOC_PROMOTION_RECON__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_RECON__NAME', '', 'en_US'),
@@ -242,10 +256,6 @@ INSERT OR REPLACE INTO LocalizedText
 
 
 
-('LOC_NAVAL_MELEE_DESCRIPTION', '[NEWLINE][NEWLINE]Naval Melee units are great at attacking other ships. They also can attack coastal cities, but their damage is reduced by 85% when the city has walls. They don''t have a ranged attack and cannot attack land units.', 'en_US'),
-('LOC_NAVAL_RANGED_DESCRIPTION', '[NEWLINE][NEWLINE]Naval Ranged units have a [ICON_Ranged] Ranged Attack that can attack cities, encampments, sea and land units. However, the attack is increased against land units and decreased against sea unit. Unwalled cities take normal damage, but walled cities only take half the damage done by Naval Ranged units.', 'en_US'),
-('LOC_NAVAL_RAIDER_DESCRIPTION', '[NEWLINE][NEWLINE]Naval Raider units are tricky. They fight dirty. They make short [ICON_Ranged] Ranged Attacks and can move after attacking. This attack is stronger against boats, especially Naval Melee units, and does normal damage against other targets. Walled cities only take half damage from Naval Raiders.[NEWLINE][NEWLINE]Often Naval Raiders are hidden to the enemy (unless adjacent to them), but enemy Naval Raiders can detect them within their sight range. They can also pillage shore tiles with their coastal raid ability.', 'en_US'),
-('LOC_NAVAL_BOMBARD_DESCRIPTION', '[NEWLINE][NEWLINE]Naval Bombard units are designed to bombard cities and encampments, doing full damage with their [ICON_Ranged] Ranged Attack even when they are walled. However, their attack is significantly less effective when used on land and sea units.', 'en_US'),
 
 ('LOC_UNIT_GALLEY_DESCRIPTION', 'Ancient era Naval Melee unit. Can only operate on coastal waters until Cartography is researched.', 'en_US'),
 ('LOC_UNIT_COG_DESCRIPTION', 'Medieval era Naval Melee unit. Much stronger than Galleys with extra attack strength against sea units.{LOC_NAVAL_MELEE_DESCRIPTION}', 'en_US'),
