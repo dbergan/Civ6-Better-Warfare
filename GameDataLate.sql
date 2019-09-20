@@ -7,9 +7,8 @@ UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass =
 -- Nothing has ZOC by default
 UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;
 
--- Priority Attack is "ABILITY_BYPASS_COMBAT_UNIT"
--- Restrict that ability to only snipers (e.g. Spec Ops)
-DELETE FROM TypeTags WHERE Type = 'ABILITY_BYPASS_COMBAT_UNIT' AND Tag != 'CLASS_SNIPER' ;
+-- Nothing has Priority Attack by default (Priority Attack is "ABILITY_BYPASS_COMBAT_UNIT")
+DELETE FROM TypeTags WHERE Type = 'ABILITY_BYPASS_COMBAT_UNIT' ;
 
 -- Remove the +1 movement for starting on clear terrain
 DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' ;
@@ -17,6 +16,12 @@ DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' ;
 -- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure how a unit would be "anti-spear"...)
 DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI_SPEAR' ;
 
+-- Remove the reveal stealth tag (we assigned our own)
+DELETE FROM TypeTags WHERE Tag = 'CLASS_REVEAL_STEALTH' ;
+
+
+-- Update vanilla REQSETS
+UPDATE RequirementArguments SET Value = 'BW_PROMOTION_CLASS_RECON' WHERE Value = 'PROMOTION_CLASS_RECON' ;
 
 
 -- Copy vanilla ability classes to BW (where the name is the same, e.g. Heavy Cavalry)
@@ -48,6 +53,9 @@ SELECT Type, 'BW_CLASS_NAVAL_BOMBARD' FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_
 -- Assign classes to units based on their (new) their PromotionClass value
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT UnitType, REPLACE(PromotionClass, 'PROMOTION_', '') FROM Units WHERE PromotionClass LIKE 'BW_%' ;
+
+INSERT OR REPLACE INTO TypeTags (Type, Tag)
+SELECT UnitType, 'BW_CLASS_RECON' FROM Units WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
 
 -- Assign CLASS_AIRCRAFT to all units with DOMAIN_AIR
 DELETE FROM TypeTags WHERE Tag = 'CLASS_AIRCRAFT' ;

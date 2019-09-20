@@ -1,6 +1,6 @@
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 2, Combat = 10, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 30, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_SCOUT' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 2, Combat = 20, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 40, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_CREE_OKIHTCITAW' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 10, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 30, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_INCA_CHASQUI' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 2, Combat = 10, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 30, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_SCOUT' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 2, Combat = 20, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 40, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_CREE_OKIHTCITAW' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 10, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 30, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_INCA_CHASQUI' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_INFANTRY', BaseMoves = 2, Combat = 10, RangedCombat = 20, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 35, Maintenance = 0, StrategicResource = NULL WHERE UnitType = 'UNIT_SLINGER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY', BaseMoves = 3, Combat = 10, RangedCombat = 15, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 35, Maintenance = 1, StrategicResource = NULL WHERE UnitType = 'UNIT_BARBARIAN_HORSE_ARCHER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_CAVALRY', BaseMoves = 2, Combat = 20, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 40, Maintenance = 1, StrategicResource = NULL WHERE UnitType = 'UNIT_BARBARIAN_HORSEMAN' ;
@@ -50,8 +50,8 @@ UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SIEGE', BaseMoves = 2, Com
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SIEGE', BaseMoves = 2, Combat = 23, RangedCombat = 0, Bombard = 35, Range = 1, AntiAirCombat = 0, Cost = 120, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_MACEDONIAN_BALLISTA' ;
 
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SUPPORT', BaseMoves = 2, Combat = 0, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 100, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_SIEGE_TOWER' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 20, RangedCombat = 30, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 150, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_SKIRMISHER' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 20, RangedCombat = 40, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 165, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_INCA_WARAKAQ' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 20, RangedCombat = 30, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 150, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_SKIRMISHER' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 20, RangedCombat = 40, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 165, Maintenance = 2, StrategicResource = NULL WHERE UnitType = 'UNIT_INCA_WARAKAQ' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 45, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 140, Maintenance = 2, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_GEORGIAN_KHEVSURETI' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 44, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 160, Maintenance = 2, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_LONGSWORDSMAN' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 46, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 160, Maintenance = 2, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_ELEANOR_TEMPLAR' ;
@@ -121,14 +121,14 @@ UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 64, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 350, Maintenance = 4, StrategicResource = 'RESOURCE_NITER' WHERE UnitType = 'UNIT_INDIAN_SEPOY' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY', BaseMoves = 4, Combat = 50, RangedCombat = 60, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 350, Maintenance = 5, StrategicResource = 'RESOURCE_NITER' WHERE UnitType = 'UNIT_HORSE_ARTILLERY' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED', BaseMoves = 2, Combat = 53, RangedCombat = 0, Bombard = 65, Range = 2, AntiAirCombat = 0, Cost = 360, Maintenance = 5, StrategicResource = 'RESOURCE_NITER' WHERE UnitType = 'UNIT_RIFLED_CANNON' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 45, RangedCombat = 60, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_RANGER' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 46, RangedCombat = 60, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 220, Maintenance = 4, StrategicResource = NULL WHERE UnitType = 'UNIT_BRAZILIAN_BANDEIRANTE' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 45, RangedCombat = 60, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_RANGER' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 46, RangedCombat = 60, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 220, Maintenance = 4, StrategicResource = NULL WHERE UnitType = 'UNIT_BRAZILIAN_BANDEIRANTE' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SUPPORT', BaseMoves = 2, Combat = 0, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 370, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_MEDIC' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 45, RangedCombat = 55, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_MAORI_TUPARA' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 50, RangedCombat = 65, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_SCOTTISH_HIGHLANDER' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 45, RangedCombat = 55, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_MAORI_TUPARA' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 50, RangedCombat = 65, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 380, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_SCOTTISH_HIGHLANDER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_CAVALRY', BaseMoves = 4, Combat = 61, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 420, Maintenance = 4, StrategicResource = 'RESOURCE_HORSES' WHERE UnitType = 'UNIT_LANCER' ;
 
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 65, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 390, Maintenance = 5, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_EARLY_LIGHT_TANK' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 65, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 390, Maintenance = 5, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_EARLY_LIGHT_TANK' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_DEFENSIVE_GUN', BaseMoves = 2, Combat = 61, RangedCombat = 65, Bombard = 0, Range = 2, AntiAirCombat = 50, Cost = 400, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_MACHINE_GUN' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 60, RangedCombat = 68, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 400, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_ANTI_TANK_RIFLE' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY', BaseMoves = 5, Combat = 60, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 400, Maintenance = 3, StrategicResource = NULL WHERE UnitType = 'UNIT_CANADA_MOUNTIE' ;
@@ -147,21 +147,21 @@ UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_CAVALRY', BaseMoves 
 
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SUPPORT', BaseMoves = 3, Combat = 0, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 420, Maintenance = 3, StrategicResource = NULL WHERE UnitType = 'UNIT_DRONE' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_MARINE', BaseMoves = 2, Combat = 76, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 430, Maintenance = 5, StrategicResource = NULL WHERE UnitType = 'UNIT_WW2_MARINE' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 72, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 450, Maintenance = 6, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_LIGHT_TANK' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 72, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 450, Maintenance = 6, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_LIGHT_TANK' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 70, RangedCombat = 75, Bombard = 0, Range = 1, AntiAirCombat = 66, Cost = 490, Maintenance = 6, StrategicResource = NULL WHERE UnitType = 'UNIT_ANTI_TANK_GUN' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 2, Combat = 80, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 500, Maintenance = 6, StrategicResource = NULL WHERE UnitType = 'UNIT_INFANTRY' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED', BaseMoves = 2, Combat = 65, RangedCombat = 75, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 500, Maintenance = 7, StrategicResource = NULL WHERE UnitType = 'UNIT_FIELD_HOWITZER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_DEFENSIVE_GUN', BaseMoves = 4, Combat = 68, RangedCombat = 72, Bombard = 0, Range = 1, AntiAirCombat = 60, Cost = 510, Maintenance = 6, StrategicResource = 'RESOURCE_OIL' WHERE UnitType = 'UNIT_ASSAULT_GUN' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 4, Combat = 70, RangedCombat = 75, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 510, Maintenance = 6, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_TANK_DESTROYER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_ANTIAIR', BaseMoves = 4, Combat = 0, RangedCombat = 0, Bombard = 0, Range = 1, AntiAirCombat = 75, Cost = 520, Maintenance = 6, StrategicResource = NULL WHERE UnitType = 'UNIT_MOBILE_AAA' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 60, RangedCombat = 65, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 520, Maintenance = 7, StrategicResource = NULL WHERE UnitType = 'UNIT_SPEC_OPS' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 3, Combat = 60, RangedCombat = 65, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 520, Maintenance = 7, StrategicResource = NULL WHERE UnitType = 'UNIT_SPEC_OPS' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_SIEGE', BaseMoves = 3, Combat = 72, RangedCombat = 0, Bombard = 88, Range = 3, AntiAirCombat = 0, Cost = 560, Maintenance = 7, StrategicResource = 'RESOURCE_OIL' WHERE UnitType = 'UNIT_HEAVY_HOWITZER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED', BaseMoves = 4, Combat = 65, RangedCombat = 75, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 560, Maintenance = 6, StrategicResource = 'RESOURCE_OIL' WHERE UnitType = 'UNIT_SP_HOWITZER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY', BaseMoves = 4, Combat = 75, RangedCombat = 85, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 600, Maintenance = 7, StrategicResource = 'RESOURCE_ALUMINUM' WHERE UnitType = 'UNIT_HELICOPTER' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY', BaseMoves = 4, Combat = 78, RangedCombat = 88, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 600, Maintenance = 7, StrategicResource = NULL WHERE UnitType = 'UNIT_AMERICAN_AH64_APACHE' ;
 
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 3, Combat = 78, RangedCombat = 82, Bombard = 0, Range = 1, AntiAirCombat = 70, Cost = 580, Maintenance = 7, StrategicResource = NULL WHERE UnitType = 'UNIT_MODERN_AT' ;
-UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 80, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 580, Maintenance = 7, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_ARMORED_CAVALRY' ;
+UPDATE Units SET PromotionClass = 'PROMOTION_CLASS_RECON', BaseMoves = 5, Combat = 80, RangedCombat = 0, Bombard = 0, Range = 0, AntiAirCombat = 0, Cost = 580, Maintenance = 7, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_ARMORED_CAVALRY' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_ANTIAIR', BaseMoves = 4, Combat = 0, RangedCombat = 0, Bombard = 0, Range = 2, AntiAirCombat = 100, Cost = 590, Maintenance = 4, StrategicResource = NULL WHERE UnitType = 'UNIT_MOBILE_SAM' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED', BaseMoves = 2, Combat = 75, RangedCombat = 85, Bombard = 0, Range = 2, AntiAirCombat = 0, Cost = 600, Maintenance = 8, StrategicResource = NULL WHERE UnitType = 'UNIT_FIELD_ARTILLERY' ;
 UPDATE Units SET PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY', BaseMoves = 4, Combat = 75, RangedCombat = 85, Bombard = 0, Range = 1, AntiAirCombat = 0, Cost = 600, Maintenance = 7, StrategicResource = 'RESOURCE_IRON' WHERE UnitType = 'UNIT_MODERN_TANK_DEST' ;
@@ -497,13 +497,13 @@ INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_INCA_CHASQUI', 'UNIT_
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_SLINGER', 'UNIT_PELTAST') ;
 
 
-
-
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_WARRIOR', 'UNIT_SPEARMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_AZTEC_EAGLE_WARRIOR', 'UNIT_SPEARMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_ARCHER', 'UNIT_COMPOSITE_BOWMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_NUBIAN_PITATI', 'UNIT_COMPOSITE_BOWMAN') ;
-
-
-
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_SPEARMAN', 'UNIT_HEAVY_INFANTRY') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_GREEK_HOPLITE', 'UNIT_HEAVY_INFANTRY') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_SUMERIAN_PHALANX', 'UNIT_HEAVY_INFANTRY') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_HEAVY_CHARIOT', 'UNIT_HORSEMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_SUMERIAN_WAR_CART', 'UNIT_HORSEMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_BATTERING_RAM', 'UNIT_SIEGE_TOWER') ;
@@ -516,15 +516,15 @@ INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_HORSEMAN', 'UNIT_ARMO
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_MACEDONIAN_HETAIROI', 'UNIT_ARMORED_HORSEMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_ROMAN_EQUITE', 'UNIT_ARMORED_HORSEMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_COMPOSITE_BOWMAN', 'UNIT_CROSSBOWMAN') ;
-
-
-
-
-
-
-
-
-
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_HEAVY_INFANTRY', 'UNIT_SWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_SWORDSMAN', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_AZTEC_JAGUAR', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_EGYPTIAN_KHOPESH', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_KONGO_SHIELD_BEARER', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_MACEDONIAN_HYPASPIST', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_MAORI_TOA', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_PERSIAN_IMMORTAL', 'UNIT_LONGSWORDSMAN') ;
+INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_ROMAN_LEGION', 'UNIT_LONGSWORDSMAN') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_WARRIOR_MONK', 'UNIT_AXE_THROWER') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_INDONESIAN_KRIS_SWORDSMAN', 'UNIT_AXE_THROWER') ;
 INSERT INTO UnitUpgrades (Unit, UpgradeUnit) VALUES ('UNIT_HORSE_ARCHER', 'UNIT_MOUNTED_CROSSBOW') ;

@@ -3,8 +3,8 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
-('BW_LOC_RECON_GENERAL', '[NEWLINE][NEWLINE]Recon units are not strong attackers, but instead excel at gathering information. They ignore terrain costs, and, when promoted, can slip into enemy territory, evade zones of control, and hide from opponents.', 'en_US'),
-('BW_LOC_HEAVY_INFANTRY_GENERAL', '[NEWLINE][NEWLINE]Heavy Infantry is your bulldozer; very powerful, but slow and expensive. Heavy Infantry units:[NEWLINE][ICON_Bullet]Have the strongest combat values of the era[NEWLINE][ICON_Bullet]Cost 1 population[NEWLINE][ICON_Bullet]Cannot be upgraded[NEWLINE][ICON_Bullet]Get an inherent bonus when defending[NEWLINE][ICON_Bullet]When they attack, they force most units to retreat (Light Infantry, Light Cavalry, Recon, Ranged, Siege, and Warrior Monks)[NEWLINE][ICON_Bullet]Receive significant support and flanking bonuses from allied Light Cavalry, Light Infantry, and Land Ranged units[NEWLINE][ICON_Bullet]Are vulnerable to harrassment from enemy Light Cavalry, Light Infantry, and Land Ranged units, but none of these can withstand a direct attack', 'en_US'),
+('BW_LOC_RECON_GENERAL', '[NEWLINE][NEWLINE]Recon units are not strong attackers, but instead excel at gathering information. By default they can see through terrain features (like woods and rainforests) and reveal stealth units.', 'en_US'),
+('BW_LOC_HEAVY_INFANTRY_GENERAL', '[NEWLINE][NEWLINE]Heavy Infantry units are your bulldozers; very powerful, but slow and expensive. They cost 1 population to make, but have the strongest combat values of the era. Heavy Infantry is vulnerable to harrassment from enemy Light Cavalry, Light Infantry, and Land Ranged units, but none of these can withstand a direct attack. And if you bring your own Light Cavalry, Light Infantry, and Land Ranged units, you can receive significant support and flanking bonuses.', 'en_US'),
 
 ('BW_LOC_LIGHT_INFANTRY_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
 ('BW_LOC_LIGHT_CAVALRY_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
@@ -15,6 +15,11 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_NAVAL_RANGED_GENERAL', '[NEWLINE][NEWLINE]Naval Ranged units have a [ICON_Ranged] Ranged Attack that can attack cities, encampments, sea and land units. However, the attack is increased against land units and decreased against sea unit. Unwalled cities take normal damage, but walled cities only take half the damage done by Naval Ranged units.', 'en_US'),
 ('BW_LOC_NAVAL_RAIDER_GENERAL', '[NEWLINE][NEWLINE]Naval Raider units are tricky. They fight dirty. They make short [ICON_Ranged] Ranged Attacks and can move after attacking. This attack is stronger against boats, especially Naval Melee units, and does normal damage against other targets. Walled cities only take half damage from Naval Raiders.[NEWLINE][NEWLINE]Often Naval Raiders are hidden to the enemy (unless adjacent to them), but enemy Naval Raiders can detect them within their sight range. They can also pillage shore tiles with their coastal raid ability.', 'en_US'),
 ('BW_LOC_NAVAL_BOMBARD_GENERAL', '[NEWLINE][NEWLINE]Naval Bombard units are designed to bombard cities and encampments, doing full damage with their [ICON_Ranged] Ranged Attack even when they are walled. However, their attack is significantly less effective when used on land and sea units.', 'en_US'),
+
+
+('LOC_UNIT_SCOUT_DESCRIPTION', 'Ancient era Recon unit.{BW_LOC_RECON_GENERAL}', 'en_US'),
+('LOC_UNIT_WARRIOR_DESCRIPTION', 'Ancient era Heavy Infantry unit.{BW_LOC_HEAVY_INFANTRY_GENERAL}', 'en_US'),
+
 
 
 ('LOC_UNIT_GALLEY_DESCRIPTION', 'Ancient era Naval Melee unit. Can only operate on coastal waters until Cartography is researched.', 'en_US'),

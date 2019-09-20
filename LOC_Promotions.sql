@@ -26,6 +26,29 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_CLASS_SIEGE_NAME', 'Siege', 'en_US'),
 ('BW_LOC_PROMOTION_CLASS_SUPPORT_NAME', 'Support', 'en_US'),
 
+
+
+-- Promotions used on multiple units
+('BW_LOC_PROMOTION_DOUBLE_TIME_NAME', 'Double Time', 'en_US'),
+('BW_LOC_PROMOTION_DOUBLE_TIME_DESCRIPTION', '+1 [ICON_Movement] movement', 'en_US'),
+
+('BW_LOC_PROMOTION_SPYGLASS_NAME', 'Spyglass', 'en_US'),
+('BW_LOC_PROMOTION_SPYGLASS_DESCRIPTION', '+1 sight range', 'en_US'),
+
+('BW_LOC_PROMOTION_STEALTH_NAME', 'Stealth', 'en_US'),
+('BW_LOC_PROMOTION_STEALTH_DESCRIPTION', 'Hidden from enemy units unless they are adjacent or have an ability to reveal stealth units', 'en_US'),
+
+('BW_LOC_PROMOTION_ZONE_OF_CONTROL_NAME', 'Zone of Control', 'en_US'),
+('BW_LOC_PROMOTION_ZONE_OF_CONTROL_DESCRIPTION', 'Exert a zone of control on adjacent enemy units', 'en_US'),
+
+('BW_LOC_PROMOTION_ELUSIVE_NAME', 'Elusive', 'en_US'),
+('BW_LOC_PROMOTION_ELUSIVE_DESCRIPTION', 'Ignore zones of control', 'en_US'),
+
+('BW_LOC_PROMOTION_DOUBLE_STRIKE_NAME', 'Double Strike', 'en_US'),
+('BW_LOC_PROMOTION_DOUBLE_STRIKE_DESCRIPTION', 'Can make 2 attacks in a turn', 'en_US'),
+
+
+
 /*
 ('BW_LOC_PROMOTION_AIR_ATTACK__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_AIR_ATTACK__NAME', '', 'en_US'),
@@ -92,21 +115,18 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
 */
 
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_BULLDOZE_NAME', 'Bulldoze Training', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_NAME', 'Phalanx Training', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_DOUBLE_TIME_NAME', 'Double Time', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_NAME', 'Sarissa Training', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo Training', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_NERVES_NAME', 'Iron Nerves', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_EXTRA_ATTACK_NAME', 'Extra Attack', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_IMPEL_NAME', 'Impel', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_IMPEL_DESCRIPTION', 'Push back Light Infantry, Light Cavalry, Land Ranged, and Recon units on attack', 'en_US'),
 
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_BULLDOZE_DESCRIPTION', 'Push back Light Infantry, Light Cavalry, Land Ranged, and Recon units on attack', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_NAME', 'Phalanx', 'en_US'),
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_DESCRIPTION', '+10 [ICON_STRENGTH] Combat Strength on defense', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_DOUBLE_TIME_DESCRIPTION', '+1 [ICON_Movement] movement', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_NAME', 'Sarissa', 'en_US'),
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_DESCRIPTION', '+5 [ICON_Strength] when attacking or defending against Heavy Infantry and Heavy Cavalry units', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo', 'en_US'),
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] when defending ranged attacks', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_NERVES_DESCRIPTION', 'No [ICON_Strength] combat strength reduction for being damaged', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_EXTRA_ATTACK_DESCRIPTION', 'Can make 2 attacks in a turn', 'en_US'),
+
 
 /*
 ('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
@@ -207,21 +227,13 @@ INSERT OR REPLACE INTO LocalizedText
 
 */
 
-
-('BW_LOC_PROMOTION_RECON_RANGER_NAME', 'Ranger', 'en_US'),
-('BW_LOC_PROMOTION_RECON_TRACKING_NAME', 'Tracking', 'en_US'),
 ('BW_LOC_PROMOTION_RECON_PATHFINDER_NAME', 'Pathfinder', 'en_US'),
-('BW_LOC_PROMOTION_RECON_SLIPPERY_NAME', 'Slippery', 'en_US'),
-('BW_LOC_PROMOTION_RECON_TROOP_INTEL_NAME', 'Troop Intel', 'en_US'),
-('BW_LOC_PROMOTION_RECON_DISGUISE_NAME', 'Disguise', 'en_US'),
-('BW_LOC_PROMOTION_RECON_CAMOUFLAGE_NAME', 'Camouflage', 'en_US'),
-
-('BW_LOC_PROMOTION_RECON_RANGER_DESCRIPTION', 'See through terrain', 'en_US'),
-('BW_LOC_PROMOTION_RECON_TRACKING_DESCRIPTION', 'Reveal enemy stealth units', 'en_US'),
 ('BW_LOC_PROMOTION_RECON_PATHFINDER_DESCRIPTION', 'Ignore terrain movement costs', 'en_US'),
-('BW_LOC_PROMOTION_RECON_SLIPPERY_DESCRIPTION', 'Ignore zones of control', 'en_US'),
+
+('BW_LOC_PROMOTION_RECON_TROOP_INTEL_NAME', 'Troop Intel', 'en_US'),
 ('BW_LOC_PROMOTION_RECON_TROOP_INTEL_DESCRIPTION', 'Adjacent enemy units attack and defend with -3 [ICON_Strength] Combat Strength', 'en_US'),
-('BW_LOC_PROMOTION_RECON_DISGUISE_DESCRIPTION', 'Enter foreign territory (e.g. ignore closed borders)', 'en_US'),
-('BW_LOC_PROMOTION_RECON_CAMOUFLAGE_DESCRIPTION', 'Stealth (hidden from enemy units unless they are adjacent or have an ability to reveal stealth units)', 'en_US')
+
+('BW_LOC_PROMOTION_RECON_DISGUISE_NAME', 'Disguise', 'en_US'),
+('BW_LOC_PROMOTION_RECON_DISGUISE_DESCRIPTION', 'Enter foreign territory (e.g. ignore closed borders)', 'en_US')
 
 ;
