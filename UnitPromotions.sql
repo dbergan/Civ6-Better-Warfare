@@ -1,9 +1,23 @@
+-----------------------------------------------
+-----------------------------------------------
+-- Promotion Classes
+-----------------------------------------------
+-----------------------------------------------
 INSERT INTO Types (Type, Kind) 
 SELECT 'BW_PROMOTION_CLASS_' || ClassName, 'KIND_PROMOTION_CLASS' FROM BW_NewUnitClasses ;
 
 INSERT INTO UnitPromotionClasses (PromotionClassType, Name) 
 SELECT 'BW_PROMOTION_CLASS_' || ClassName, 'BW_LOC_PROMOTION_CLASS_' || ClassName || '_NAME' FROM BW_NewUnitClasses ;
 
+
+-----------------------------------------------
+-----------------------------------------------
+-- Promotions
+-----------------------------------------------
+-----------------------------------------------
+
+
+-- Heavy Infantry
 
 INSERT INTO Types 
 (Type,											Kind)
@@ -41,7 +55,7 @@ VALUES
 ('BW_PROMOTION_HEAVY_INFANTRY_EXTRA_ATTACK',	'BW_PROMOTION_HEAVY_INFANTRY_NERVES') ;
 
 INSERT INTO UnitPromotionModifiers
-(UnitPromotionType, ModifierId)
+(UnitPromotionType,								ModifierId)
 VALUES
 ('BW_PROMOTION_HEAVY_INFANTRY_BULLDOZE',		'BW_MOD_HEAVY_INFANTRY_BULLDOZE'),
 ('BW_PROMOTION_HEAVY_INFANTRY_PHALANX',			'BW_MOD_HEAVY_INFANTRY_PHALANX'),
@@ -52,13 +66,10 @@ VALUES
 ('BW_PROMOTION_HEAVY_INFANTRY_EXTRA_ATTACK',	'BW_MOD_EXTRA_ATTACK') ;
 
 
-INSERT INTO Modifiers
-()
-VALUES
-(),
 
 
 
+-- Recon
 
 INSERT INTO Types 
 (Type,								Kind)
@@ -82,8 +93,6 @@ VALUES
 ('BW_PROMOTION_RECON_DISGUISE',		3,		3,		'BW_PROMOTION_CLASS_RECON',	'BW_LOC_PROMOTION_RECON_DISGUISE_NAME',		'BW_LOC_PROMOTION_RECON_DISGUISE_DESCRIPTION'),
 ('BW_PROMOTION_RECON_CAMOUFLAGE',	4,		2,		'BW_PROMOTION_CLASS_RECON',	'BW_LOC_PROMOTION_RECON_CAMOUFLAGE_NAME',	'BW_LOC_PROMOTION_RECON_CAMOUFLAGE_DESCRIPTION') ;
 
--- INSERT INTO UnitPromotionModifiers (UnitPromotionType, ModifierId)
-
 INSERT INTO UnitPromotionPrereqs 
 (UnitPromotion,						PrereqUnitPromotion) 
 VALUES
@@ -94,6 +103,18 @@ VALUES
 ('BW_PROMOTION_RECON_DISGUISE',		'BW_PROMOTION_RECON_SLIPPERY'),
 ('BW_PROMOTION_RECON_CAMOUFLAGE',	'BW_PROMOTION_RECON_TROOP_INTEL'),
 ('BW_PROMOTION_RECON_CAMOUFLAGE',	'BW_PROMOTION_RECON_DISGUISE') ;
+
+INSERT INTO UnitPromotionModifiers
+(UnitPromotionType,					ModifierId)
+VALUES
+('BW_PROMOTION_RECON_RANGER',		'BW_MOD_SEE_THROUGH_TERRAIN'),
+('BW_PROMOTION_RECON_TRACKING',		'BW_MOD_REVEAL_STEALTH'),
+('BW_PROMOTION_RECON_PATHFINDER',	'BW_MOD_IGNORE_TERRAIN_MOVEMENT'),
+('BW_PROMOTION_RECON_SLIPPERY',		'BW_MOD_IGNORE_ZOC'),
+('BW_PROMOTION_RECON_TROOP_INTEL',	'BW_MOD_RECON_TROOP_INTEL'),
+('BW_PROMOTION_RECON_DISGUISE',		'BW_MOD_ENTER_FOREIGN'),
+('BW_PROMOTION_RECON_CAMOUFLAGE',	'BW_MOD_STEALTH') ;
+
 
 
 

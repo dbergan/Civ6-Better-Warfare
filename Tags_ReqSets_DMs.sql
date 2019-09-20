@@ -1,3 +1,56 @@
+DROP TABLE IF EXISTS BW_NewUnitClasses ;
+CREATE TABLE BW_NewUnitClasses (ClassName VARCHAR) ;
+
+INSERT INTO BW_NewUnitClasses
+(ClassName)
+VALUES
+('AIR_ATTACK'),
+('AIR_BOMBER'),
+('AIR_FIGHTER'),
+('ANTIAIR'),
+('DEFENSIVE_GUN'),
+('ELEPHANT'),
+('GIANT_DEATH_ROBOT'),
+('HEAVY_CAVALRY'),
+('HEAVY_INFANTRY'),
+('LAND_RANGED'),
+('LIGHT_CAVALRY'),
+('LIGHT_INFANTRY'),
+('MARINE'),
+('MONK'),
+('NAVAL_BOMBARD'),
+('NAVAL_CARRIER'),
+('NAVAL_MELEE'),
+('NAVAL_RAIDER'),
+('NAVAL_RANGED'),
+('RECON'),
+('SIEGE'),
+('SUPPORT')
+;
+
+
+
+-----------------------------------------------
+-----------------------------------------------
+-- Tags
+-----------------------------------------------
+-----------------------------------------------
+
+-- Create new ability class tags for each unit class
+INSERT INTO Tags (Tag, Vocabulary)
+SELECT 'BW_CLASS_' || ClassName, 'ABILITY_CLASS' FROM BW_NewUnitClasses ;
+
+
+
+
+
+-----------------------------------------------
+-----------------------------------------------
+-- Requirements
+-----------------------------------------------
+-----------------------------------------------
+
+
 -- REQs based on Promotion Class
 INSERT OR REPLACE INTO Requirements (RequirementId, RequirementType) 
 SELECT 'BW_REQ_OPPONENT_IS_' || ClassName, 'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES' FROM BW_NewUnitClasses ;
@@ -59,3 +112,14 @@ INSERT OR REPLACE INTO RequirementSetRequirements
 (RequirementSetId,						RequirementId)
 VALUES
 ('BW_REQSET_NORMAL_DAMAGE_DECREMENT',	'BW_REQ_NORMAL_DAMAGE_DECREMENT') ;
+
+
+
+
+
+-----------------------------------------------
+-----------------------------------------------
+-- Dynamic Modifiers
+-----------------------------------------------
+-----------------------------------------------
+

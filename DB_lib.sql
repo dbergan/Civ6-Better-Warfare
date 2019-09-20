@@ -9,13 +9,16 @@
 INSERT OR IGNORE INTO Tags (Tag, Vocabulary) VALUES 
                             ('DB_CLASS_ALL', 'ABILITY_CLASS'),
                             ('DB_CLASS_LAND_COMBAT', 'ABILITY_CLASS'),
-				            ('DB_CLASS_NAVAL_COMBAT', 'ABILITY_CLASS') ;
+				            ('DB_CLASS_NAVAL_COMBAT', 'ABILITY_CLASS'),
+				            ('DB_CLASS_AIR_COMBAT', 'ABILITY_CLASS') ;
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_ALL' FROM Units ;
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_LAND_COMBAT' FROM Units WHERE FormationClass = 'FORMATION_CLASS_LAND_COMBAT' ;
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_NAVAL_COMBAT' FROM Units WHERE FormationClass = 'FORMATION_CLASS_NAVAL' ;
+INSERT OR IGNORE INTO TypeTags (Type, Tag)
+  SELECT UnitType, 'DB_CLASS_AIR_COMBAT' FROM Units WHERE FormationClass = 'FORMATION_CLASS_AIR' ;
 
 
 

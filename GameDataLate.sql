@@ -1,7 +1,25 @@
-INSERT INTO Tags (Tag, Vocabulary)
-SELECT 'BW_CLASS_' || ClassName, 'ABILITY_CLASS' FROM BW_NewUnitClasses ;
+-- Remove all MandatoryObsoletes
+UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
+
+-- Heavy Inf requires a population
+UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' ;
+
+-- Nothing has ZOC by default
+UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;
+
+-- Priority Attack is "ABILITY_BYPASS_COMBAT_UNIT"
+-- Restrict that ability to only snipers (e.g. Spec Ops)
+DELETE FROM TypeTags WHERE Type = 'ABILITY_BYPASS_COMBAT_UNIT' AND Tag != 'CLASS_SNIPER' ;
+
+-- Remove the +1 movement for starting on clear terrain
+DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' ;
+
+-- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure how a unit would be "anti-spear"...)
+DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI_SPEAR' ;
 
 
+
+-- Copy vanilla ability classes to BW (where the name is the same, e.g. Heavy Cavalry)
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT TypeTags.Type, 'BW_CLASS_' || BW_NewUnitClasses.ClassName 
 FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' ;
@@ -27,11 +45,10 @@ SELECT Type, 'BW_CLASS_NAVAL_BOMBARD' FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_
 
 
 
--- Assign classes to units from their PromotionClass
+-- Assign classes to units based on their (new) their PromotionClass value
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT UnitType, REPLACE(PromotionClass, 'PROMOTION_', '') FROM Units WHERE PromotionClass LIKE 'BW_%' ;
 
-/*
 -- Assign CLASS_AIRCRAFT to all units with DOMAIN_AIR
 DELETE FROM TypeTags WHERE Tag = 'CLASS_AIRCRAFT' ;
 INSERT INTO TypeTags (Type, Tag)
@@ -41,4 +58,3 @@ SELECT UnitType, 'CLASS_AIRCRAFT' FROM Units WHERE Domain = 'DOMAIN_AIR' ;
 DELETE FROM TypeTags WHERE Tag = 'CLASS_ANTI_AIR' ;
 INSERT INTO TypeTags (Type, Tag)
 SELECT UnitType, 'CLASS_ANTI_AIR' FROM Units WHERE AntiAirCombat > 0 ;
-*/
