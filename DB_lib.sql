@@ -717,7 +717,7 @@ VALUES
 ('DB_REQSET_ATTACKING_AIR',		'DB_REQ_OPPONENT_IS_AIR_UNIT'),
 ('DB_REQSET_ATTACKING_AIR',		'DB_REQ_ATTACKING') ;
 
--- Adjacent unit is...
+-- Adjacent unit is at war (e.g. decrementing the enemy CS like a Varu)
 INSERT OR REPLACE INTO Requirements
 (RequirementId,					RequirementType,								Inverse) 
 VALUES
@@ -726,7 +726,7 @@ VALUES
 INSERT OR REPLACE INTO RequirementArguments
 (RequirementId,					Name,				Value)
 VALUES
-('DB_REQ_ADJACENT_UNIT_AT_WAR',	'MinDistance',		1),
+('DB_REQ_ADJACENT_UNIT_AT_WAR',	'MinDistance',		0),
 ('DB_REQ_ADJACENT_UNIT_AT_WAR',	'MaxDistance',		1) ;
 
 INSERT OR REPLACE INTO RequirementSets
@@ -738,6 +738,28 @@ INSERT OR REPLACE INTO RequirementSetRequirements
 (RequirementSetId,					RequirementId)
 VALUES
 ('DB_REQSET_ADJACENT_UNIT_AT_WAR',	'DB_REQ_ADJACENT_UNIT_AT_WAR') ;
+
+
+-- Adjacent friendly unit matches tag (e.g. increasing range with obs balloon)
+INSERT OR REPLACE INTO Requirements
+(RequirementId,							RequirementType,										Inverse) 
+VALUES
+('DB_REQ_ADJACENT_UNIT_LAND_COMBAT',	'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES',	0) ;
+
+INSERT OR REPLACE INTO RequirementArguments
+(RequirementId,							Name,	Value)
+VALUES
+('DB_REQ_ADJACENT_UNIT_LAND_COMBAT',	'Tag',	'DB_CLASS_LAND_COMBAT') ;
+
+INSERT OR REPLACE INTO RequirementSets
+(RequirementSetId,						RequirementSetType)
+VALUES
+('DB_REQSET_ADJACENT_UNIT_LAND_COMBAT',	'REQUIREMENTSET_TEST_ALL') ;
+
+INSERT OR REPLACE INTO RequirementSetRequirements
+(RequirementSetId,						RequirementId)
+VALUES
+('DB_REQSET_ADJACENT_UNIT_LAND_COMBAT',	'DB_REQ_ADJACENT_UNIT_LAND_COMBAT') ;
 
 
 

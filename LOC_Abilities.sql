@@ -3,11 +3,18 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
+('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_NAME', 'Enter Foreign Territory', 'en_US'),
+('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_DESCRIPTION', 'Can enter foreign territory without penalty (e.g. ignore closed borders)', 'en_US'),
+
 ('BW_LOC_ABILITY_REVEAL_STEALTH_NAME', 'Reveal Stealth', 'en_US'),
 ('BW_LOC_ABILITY_REVEAL_STEALTH_DESCRIPTION', 'Can see stealth units within its sight range', 'en_US'),
 
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_NAME', 'Ranger', 'en_US'),
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_DESCRIPTION', 'Can see through terrain features (e.g. woods and rainforests)', 'en_US'),
+
+('BW_LOC_ABILITY_NORMAL_DAMAGE_DECREMENT_NAME', 'Normal Damage', 'en_US'),
+('BW_LOC_ABILITY_NORMAL_DAMAGE_DECREMENT_DESCRIPTION', 'Normal: [ICON_Strength] Combat Strength is reduced by 1 for every 10 damage', 'en_US'),
+
 
 
 ('BW_LOC_ABILITY_NAVAL_MELEE_NO_GALLEY_ATTACKING_SEA_NAME', 'Naval Melee More Effective Attacking Sea Units', 'en_US'),

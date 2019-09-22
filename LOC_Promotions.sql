@@ -47,6 +47,43 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_DOUBLE_STRIKE_NAME', 'Double Strike', 'en_US'),
 ('BW_LOC_PROMOTION_DOUBLE_STRIKE_DESCRIPTION', 'Can make 2 attacks in a turn', 'en_US'),
 
+('BW_LOC_PROMOTION_IMPEL_NAME', 'Impel', 'en_US'),
+('BW_LOC_PROMOTION_IMPEL_DESCRIPTION', 'Push back opponents when you attack and deal more damage to them than they do to you (and if they can''t retreat, they''ll take even more damage)', 'en_US'),
+
+('BW_LOC_PROMOTION_HIT_AND_RUN_NAME', 'Hit and Run', 'en_US'),
+('BW_LOC_PROMOTION_HIT_AND_RUN_DESCRIPTION', 'Move after attacking', 'en_US'),
+
+('BW_LOC_PROMOTION_PRIORITY_TARGET_NAME', 'Priority Target', 'en_US'),
+('BW_LOC_PROMOTION_PRIORITY_TARGET_DESCRIPTION', 'Acquire the ability to do a 65 damage attack to support (diamond icon) units, even when they share a tile with a front-line unit', 'en_US'),
+
+('BW_LOC_PROMOTION_SURVIVALIST_NAME', 'Survivalist', 'en_US'),
+('BW_LOC_PROMOTION_SURVIVALIST_DESCRIPTION', 'Heal after any action', 'en_US'),
+
+
+
+
+
+
+
+
+
+
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_NAME', 'Phalanx', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_DESCRIPTION', '+10 [ICON_STRENGTH] Combat Strength on defense', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_NAME', 'Sarissa', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_DESCRIPTION', '+5 [ICON_Strength] when attacking or defending against Heavy Infantry and Heavy Cavalry units', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] when defending ranged attacks', 'en_US'),
+
+
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_SCREEN_NAME', 'Screen', 'en_US'),
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_SCREEN_DESCRIPTION', '+400% flanking when adjacent to a melee-attack battle', 'en_US'),
+
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_FLANK_GUARD_NAME', 'Flank Guard', 'en_US'),
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_FLANK_GUARD_DESCRIPTION', '+9 Support', 'en_US'),
+
 
 
 /*
@@ -115,17 +152,6 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
 */
 
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_IMPEL_NAME', 'Impel', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_IMPEL_DESCRIPTION', 'Push back Light Infantry, Light Cavalry, Land Ranged, and Recon units on attack', 'en_US'),
-
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_NAME', 'Phalanx', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_DESCRIPTION', '+10 [ICON_STRENGTH] Combat Strength on defense', 'en_US'),
-
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_NAME', 'Sarissa', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_DESCRIPTION', '+5 [ICON_Strength] when attacking or defending against Heavy Infantry and Heavy Cavalry units', 'en_US'),
-
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] when defending ranged attacks', 'en_US'),
 
 
 /*
@@ -136,15 +162,10 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
+*/
 
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY__NAME', '', 'en_US'),
 
+/*
 ('BW_LOC_PROMOTION_MARINE__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_MARINE__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_MARINE__NAME', '', 'en_US'),

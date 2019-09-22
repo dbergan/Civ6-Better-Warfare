@@ -22,12 +22,16 @@ DELETE FROM TypeTags WHERE Tag = 'CLASS_REVEAL_STEALTH' ;
 
 -- Update vanilla REQSETS
 UPDATE RequirementArguments SET Value = 'BW_PROMOTION_CLASS_RECON' WHERE Value = 'PROMOTION_CLASS_RECON' ;
-
+UPDATE Units SET Combat = 0 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
 
 -- Copy vanilla ability classes to BW (where the name is the same, e.g. Heavy Cavalry)
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT TypeTags.Type, 'BW_CLASS_' || BW_NewUnitClasses.ClassName 
-FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' ;
+FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' 
+WHERE BW_NewUnitClasses.ClassName != 'RECON' ;
+
+-- Reclass Ranged abilities to Land Ranged
+UPDATE TypeTags SET Tag = 'BW_CLASS_LAND_RANGED' WHERE Tag = 'CLASS_RANGED' ;
 
 -- Reclass Melee abilities to Heavy Infantry
 UPDATE TypeTags SET Tag = 'BW_CLASS_HEAVY_INFANTRY' WHERE Tag = 'CLASS_MELEE' ;
