@@ -72,17 +72,17 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_PHALANX_DESCRIPTION', '+10 [ICON_STRENGTH] Combat Strength on defense', 'en_US'),
 
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_NAME', 'Sarissa', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_DESCRIPTION', '+5 [ICON_Strength] when attacking or defending against Heavy Infantry and Heavy Cavalry units', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_SARISSA_DESCRIPTION', '+5 [ICON_Strength] Combat Strength when attacking or defending land melee units (e.g. Heavy Infantry, Heavy Cavalry)', 'en_US'),
 
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] when defending ranged attacks', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] Combat Strength when defending ranged attacks', 'en_US'),
 
 
 ('BW_LOC_PROMOTION_LIGHT_INFANTRY_SCREEN_NAME', 'Screen', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY_SCREEN_DESCRIPTION', '+400% flanking when adjacent to a melee-attack battle', 'en_US'),
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_SCREEN_DESCRIPTION', 'When next to a friendly land melee unit: adjacent enemies -7 [ICON_Strength] defense in land melee battles', 'en_US'),
 
 ('BW_LOC_PROMOTION_LIGHT_INFANTRY_FLANK_GUARD_NAME', 'Flank Guard', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_INFANTRY_FLANK_GUARD_DESCRIPTION', '+9 Support', 'en_US'),
+('BW_LOC_PROMOTION_LIGHT_INFANTRY_FLANK_GUARD_DESCRIPTION', 'When next to a friendly land melee unit: adjacent enemies -7 [ICON_Strength] attack in land melee battles', 'en_US'),
 
 
 

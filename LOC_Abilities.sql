@@ -3,6 +3,12 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
+('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_NAME', 'Light Infantry Can Flank Guard', 'en_US'),
+('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_DESCRIPTION', 'Flank Guard Active (next to friendly melee unit): adjacent enemies -7 [ICON_Strength] attack in land melee battles', 'en_US'),
+
+('BW_LOC_ABILITY_LIGHT_INFANTRY_SCREEN_NT_LAND_MELEE_ATTACKER_NAME', 'Light Infantry Can Screen', 'en_US'),
+('BW_LOC_ABILITY_LIGHT_INFANTRY_SCREEN_NT_LAND_MELEE_ATTACKER_DESCRIPTION', 'Screen Active (next to friendly melee unit): adjacent enemies -7 [ICON_Strength] defense in land melee battles', 'en_US'),
+
 ('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_NAME', 'Enter Foreign Territory', 'en_US'),
 ('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_DESCRIPTION', 'Can enter foreign territory without penalty (e.g. ignore closed borders)', 'en_US'),
 

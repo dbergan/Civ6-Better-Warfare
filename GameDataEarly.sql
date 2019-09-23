@@ -1,5 +1,8 @@
--- Set baseline support and flanking to 1 CS because modifiers are all in terms of percentages (standard = 2)
-UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' OR Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
+-- Set baseline flanking to 1 CS because modifiers are all in terms of percentages (standard = 2)
+-- UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' ;
+
+-- Set baseline support to 1 CS because modifiers are all in terms of percentages (standard = 2)
+-- UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
 
 -- Set baseline damage multipler to 100 because modifier is in terms of percentages (standard = 10; also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
 UPDATE GlobalParameters SET Value = 100 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;
