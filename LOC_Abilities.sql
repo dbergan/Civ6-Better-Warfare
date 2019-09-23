@@ -3,6 +3,9 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
+('BW_LOC_ABILITY_RECON_GAIN_EXP_FROM_ADJACENT_BATTLES_NAME', 'Recon gains XP when next to battle', 'en_US'),
+('BW_LOC_ABILITY_RECON_GAIN_EXP_FROM_ADJACENT_BATTLES_DESCRIPTION', 'Recon units gain experience when next to a battle', 'en_US'),
+
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_NAME', 'Light Infantry Can Flank Guard', 'en_US'),
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_DESCRIPTION', 'Flank Guard Active (next to friendly melee unit): adjacent enemies -7 [ICON_Strength] attack in land melee battles', 'en_US'),
 

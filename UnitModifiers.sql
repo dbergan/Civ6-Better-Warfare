@@ -1,6 +1,7 @@
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,												ModifierType,											SubjectRequirementSetId)
 VALUES	
+-- EFFECT_ADJUST_UNIT_GRANT_EXPERIENCE
 ('BW_MOD_MOVE_AFTER_ATTACK',									'MODIFIER_PLAYER_UNIT_ADJUST_ATTACK_AND_MOVE',			null),
 ('BW_MOD_+1_MOVEMENT',											'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT',					null),
 ('BW_MOD_+1_SIGHT',												'MODIFIER_PLAYER_UNIT_ADJUST_SIGHT',					null),
