@@ -12,14 +12,8 @@ function dump(o)
 end
 
 function GetAdjacentPlots(plot, includeCenter)
-
-print("GAP plot " .. dump(plot))
-print("GAP includeCenter " .. dump(includeCenter))
-
 	local iX 	= plot:GetX()
-print("GAP iX " .. dump(iX))
 	local iY 	= plot:GetY()
-print("GAP iY " .. dump(iY))
 
 	local list	= {}
 	
@@ -33,55 +27,65 @@ print("GAP iY " .. dump(iY))
 			table.insert(list, adjacentPlot)
 		end		
 	end
-print("GAP list " .. dump(list))
 	return list
 end
 
 function BW_Combat(combatResult)
-	local attacker 		= combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.ID]
-print("attacker " .. dump(attacker))
-	local defender 		= combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.ID]
-print("defender " .. dump(defender))
-	local locationX		= combatResult[CombatResultParameters.LOCATION].x
-print("locationX " .. dump(locationX))
-	local locationY		= combatResult[CombatResultParameters.LOCATION].y
-print("locationY " .. dump(locationY))
+	local CType = combatResult[CombatResultParameters.COMBAT_TYPE]
 
-	local location		= Map.GetPlotXY(locationX, locationY)
-print("location " .. dump(location))
-	local locationRC	= Map.GetPlotXYWithRangeCheck(locationX, locationY)
-print("locationRC " .. dump(locationRC))
+	-- Melee is 748940753
+	-- Ranged is 784649805
+	if CType == 748940753 then
+		local attackerID 		= combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.ID].id
+		local attackerPlayerID 		= combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.ID].player
+		local attackerPlot	= Map.GetPlotXYWithRangeCheck(combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.LOCATION].x, combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.LOCATION].y)
+		local attackerAdjacentPlots = GetAdjacentPlots(attackerPlot, true)
 
-	local adjacentToLocation = GetAdjacentPlots(locationRC, true)
+		local defenderID 		= combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.ID].id
+		local defenderPlayerID 		= combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.ID].player
+		local defenderPlot	= Map.GetPlotXYWithRangeCheck(combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.LOCATION].x, combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.LOCATION].y)
+		local defenderAdjacentPlots = GetAdjacentPlots(defenderPlot, true)
 
-	for i, plotID in ipairs(adjacentToLocation) do
-print("plotID " .. dump(plotID))
-
-		local plot 		= Map.GetPlotByIndex(plotID)
-print("plot " .. dump(plot))
-print("plotx " .. dump(plot:GetX()))
-print("ploty " .. dump(plot:GetY()))
-
-		local aUnits 	= Units.GetUnitsInPlot(plot)
-print("aUnits " .. dump(aUnits))
-		for j, pUnit in ipairs(aUnits) do
-print("pUnit " .. dump(pUnit))
-print("pUnit ID " .. dump(pUnit:GetID()))
-print("pUnit type " .. dump(pUnit:GetType()))
-print("pUnit XP " .. dump(pUnit:GetExperience()))
-
-			if pUnit:GetID() == attacker then
-				print("IS attacker")
-			elseif pUnit:GetID() == defender then
-				print("IS defender")
-			elseif GameInfo.Units[pUnit:GetType()].UnitType ~= "UNIT_SCOUT" then
-				print("NOT SCOUT")
-			else
-				print("GETS XP " .. pUnit:GetID())
-				local iXP = 1; -- pUnit:GetExperience():GetExperienceForNextLevel() - pUnit:GetExperience():GetExperiencePoints();
-				pUnit:GetExperience():ChangeExperience(iXP);
+		-- Units next to defender get XP (but not the attacker and defender, naturally)
+		for i, plot in ipairs(defenderAdjacentPlots) do
+			local aUnits 	= Units.GetUnitsInPlot(plot)
+			for j, pUnit in ipairs(aUnits) do
+				if pUnit:GetID() ~= attackerID and pUnit:GetID() ~= defenderID then
+					if GameInfo.Units[pUnit:GetType()].PromotionClass == "PROMOTION_CLASS_RECON" then
+						pUnit:GetExperience():ChangeExperience(2);
+					else
+						pUnit:GetExperience():ChangeExperience(1);
+					end
+				end
 			end
+		end
 
+
+		-- Units next to the enemy (attacker OR defender) get XP (but not the attacker and defender, naturally)
+		for i, plot in ipairs(attackerAdjacentPlots) do
+			local aUnits 	= Units.GetUnitsInPlot(plot)
+			for j, pUnit in ipairs(aUnits) do
+				if Players[pUnit:GetOwner()]:GetID() ~= attackerPlayerID and pUnit:GetID() ~= attackerID and pUnit:GetID() ~= defenderID then
+					if GameInfo.Units[pUnit:GetType()].PromotionClass == "PROMOTION_CLASS_RECON" then
+						pUnit:GetExperience():ChangeExperience(2);
+					else
+						pUnit:GetExperience():ChangeExperience(1);
+					end
+				end
+			end
+		end
+
+		for i, plot in ipairs(defenderAdjacentPlots) do
+			local aUnits 	= Units.GetUnitsInPlot(plot)
+			for j, pUnit in ipairs(aUnits) do
+				if Players[pUnit:GetOwner()]:GetID() ~= defenderPlayerID and pUnit:GetID() ~= attackerID and pUnit:GetID() ~= defenderID then
+					if GameInfo.Units[pUnit:GetType()].PromotionClass == "PROMOTION_CLASS_RECON" then
+						pUnit:GetExperience():ChangeExperience(2);
+					else
+						pUnit:GetExperience():ChangeExperience(1);
+					end
+				end
+			end
 		end
 	end
 end
