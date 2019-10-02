@@ -4,7 +4,16 @@ INSERT OR REPLACE INTO LocalizedText
 (Tag, Text, Language) VALUES
 
 ('BW_LOC_ABILITY_GAIN_EXP_FROM_ADJACENT_BATTLES_NAME', 'Gains XP when next to battle', 'en_US'),
-('BW_LOC_ABILITY_GAIN_EXP_FROM_ADJACENT_BATTLES_DESCRIPTION', 'Gain 1 XP when next to a defender or an enemy unit during melee combat (can gain 2 if adjacent to both or when the defender is the enemy). Double if a Recon unit.', 'en_US'),
+('BW_LOC_ABILITY_GAIN_EXP_FROM_ADJACENT_BATTLES_DESCRIPTION', 'Gain 1 XP when next to a defender or an enemy unit during melee combat (can gain 2 if adjacent to both or when the defender is the enemy). Double for Recon units.', 'en_US'),
+
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_NAILQ_NAME', 'Is Nail?', 'en_US'),
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_DESCRIPTION', 'Enemy Heavy Cavalry has Hammer and Anvil promotion', 'en_US'),
+
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_ANVIL_NAME', 'Anvil', 'en_US'),
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_ANVIL_DESCRIPTION', 'Acting as the Anvil for nearby Heavy Cavalry', 'en_US'),
+
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_NAILA_NAME', 'Is Nail', 'en_US'),
+('BW_LOC_ABILITY_HEAVY_CAVALRY_HAMMER_AND_ANVIL_DESCRIPTION', 'Exposed to Hammer and Anvil: -10 [ICON_Strength] defense vs Heavy Cavalry', 'en_US'),
 
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_NAME', 'Light Infantry Can Flank Guard', 'en_US'),
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_FLANK_GUARD_NT_LAND_MELEE_ATTACKER_DESCRIPTION', 'Flank Guard Active (next to friendly melee unit): adjacent enemies -7 [ICON_Strength] attack in land melee battles', 'en_US'),
@@ -18,12 +27,18 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_ABILITY_REVEAL_STEALTH_NAME', 'Reveal Stealth', 'en_US'),
 ('BW_LOC_ABILITY_REVEAL_STEALTH_DESCRIPTION', 'Can see stealth units within its sight range', 'en_US'),
 
+
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_NAME', 'Ranger', 'en_US'),
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_DESCRIPTION', 'Can see through terrain features (e.g. woods and rainforests)', 'en_US'),
 
 ('BW_LOC_ABILITY_NORMAL_DAMAGE_DECREMENT_NAME', 'Normal Damage', 'en_US'),
 ('BW_LOC_ABILITY_NORMAL_DAMAGE_DECREMENT_DESCRIPTION', 'Normal: [ICON_Strength] Combat Strength is reduced by 1 for every 10 damage', 'en_US'),
 
+('BW_LOC_ABILITY_SHOCK_TACTICS_DAMAGE_DECREMENT_NAME', '{BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_NAME} Damage2', 'en_US'),
+('BW_LOC_ABILITY_SHOCK_TACTICS_DAMAGE_DECREMENT_DESCRIPTION', '{BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_NAME} (adj enemy Heavy Cavalry): [ICON_Strength] Combat Strength is reduced by 1 for every 3.33 damage when defending vs Heavy Cavalry2', 'en_US'),
+
+('BW_LOC_ABILITY_SHOCK_TACTICS_NT_PROMOTED_ENEMY_HEAVY_CAV_NAME', '{BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_NAME} Damage', 'en_US'),
+('BW_LOC_ABILITY_SHOCK_TACTICS_NT_PROMOTED_ENEMY_HEAVY_CAV_DESCRIPTION', '{BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_NAME} (adj enemy Heavy Cavalry): [ICON_Strength] Combat Strength is reduced by 1 for every 3.33 damage when defending vs Heavy Cavalry', 'en_US'),
 
 
 ('BW_LOC_ABILITY_NAVAL_MELEE_NO_GALLEY_ATTACKING_SEA_NAME', 'Naval Melee More Effective Attacking Sea Units', 'en_US'),

@@ -977,7 +977,45 @@ VALUES
 ('DB_REQSET_ADJACENT_UNIT_AT_WAR',	'DB_REQ_ADJACENT_UNIT_AT_WAR') ;
 
 
--- Adjacent friendly unit matches tag (e.g. increasing range with obs balloon)
+-- Modifier applies when same tile/adjacent to owner (e.g. promoted unit)
+INSERT OR REPLACE INTO Requirements
+(RequirementId,									RequirementType,						Inverse) 
+VALUES
+('DB_REQ_SAME_TILE_AS_OWNER',					'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',	0),
+('DB_REQ_ADJACENT_TO_OWNER',					'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',	0),
+('DB_REQ_ADJACENT_TO_OR_SAME_TILE_AS_OWNER',	'REQUIREMENT_PLOT_ADJACENT_TO_OWNER',	0)
+;
+
+INSERT OR REPLACE INTO RequirementArguments
+(RequirementId,									Name,			Value)
+VALUES
+('DB_REQ_SAME_TILE_AS_OWNER',					'MaxDistance',	0),
+('DB_REQ_SAME_TILE_AS_OWNER',					'MinDistance',	0),
+('DB_REQ_ADJACENT_TO_OWNER',					'MaxDistance',	1),
+('DB_REQ_ADJACENT_TO_OWNER',					'MinDistance',	1),
+('DB_REQ_ADJACENT_TO_OR_SAME_TILE_AS_OWNER',	'MaxDistance',	1),
+('DB_REQ_ADJACENT_TO_OR_SAME_TILE_AS_OWNER',	'MinDistance',	0)
+;
+
+INSERT OR REPLACE INTO RequirementSets
+(RequirementSetId,								RequirementSetType)
+VALUES
+('DB_REQSET_SAME_TILE_AS_OWNER',				'REQUIREMENTSET_TEST_ALL'),
+('DB_REQSET_ADJACENT_TO_OWNER',					'REQUIREMENTSET_TEST_ALL'),
+('DB_REQSET_ADJACENT_TO_OR_SAME_TILE_AS_OWNER',	'REQUIREMENTSET_TEST_ALL')
+;
+
+INSERT OR REPLACE INTO RequirementSetRequirements
+(RequirementSetId,								RequirementId)
+VALUES
+('DB_REQSET_SAME_TILE_AS_OWNER',				'DB_REQ_SAME_TILE_AS_OWNER'),
+('DB_REQSET_ADJACENT_TO_OWNER',					'DB_REQ_ADJACENT_TO_OWNER'),
+('DB_REQSET_ADJACENT_TO_OR_SAME_TILE_AS_OWNER',	'DB_REQ_ADJACENT_TO_OR_SAME_TILE_AS_OWNER')
+;
+
+
+
+-- Modifier applies to me when adjacent friendly unit matches tag (e.g. increasing range with obs balloon)
 INSERT OR REPLACE INTO Requirements
 (RequirementId,									RequirementType,										Inverse) 
 VALUES
@@ -1033,8 +1071,6 @@ VALUES
 ('DB_REQSET_ADJACENT_UNIT_NAVAL_RANGED_ATTACKER',	'DB_REQ_ADJACENT_UNIT_NAVAL_RANGED_ATTACKER'),
 ('DB_REQSET_ADJACENT_UNIT_NAVAL_BOMBARD_ATTACKER',	'DB_REQ_ADJACENT_UNIT_NAVAL_BOMBARD_ATTACKER')
 ;
-
-
 
 
 
@@ -1159,16 +1195,50 @@ INSERT OR IGNORE INTO DynamicModifiers
 VALUES
 ('DB_DM_REDUCE_DAMAGE_DECREMENT_BY_PERCENT',	'COLLECTION_OWNER',	'EFFECT_ADJUST_UNIT_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER') ;
 
--- Grant single unit ability
+-- All units damage decrement
 INSERT OR IGNORE INTO Types
-(Type,					Kind)
+(Type,													Kind)
 VALUES
-('DB_DM_GRANT_ABILITY',	'KIND_MODIFIER') ;
+('DB_DM_REDUCE_DAMAGE_DECREMENT_BY_PERCENT_ALL_UNITS',	'KIND_MODIFIER') ;
 
 INSERT OR IGNORE INTO DynamicModifiers 
-(ModifierType,			CollectionType,		EffectType)
+(ModifierType,											CollectionType,			EffectType)
 VALUES
-('DB_DM_GRANT_ABILITY',	'COLLECTION_OWNER',	'EFFECT_GRANT_ABILITY') ;
+('DB_DM_REDUCE_DAMAGE_DECREMENT_BY_PERCENT_ALL_UNITS',	'COLLECTION_ALL_UNITS',	'EFFECT_ADJUST_UNIT_STRENGTH_REDUCTION_FOR_DAMAGE_MODIFIER') ;
+
+
+-- Grant single unit ability
+INSERT OR IGNORE INTO Types
+(Type,									Kind)
+VALUES
+('DB_DM_GRANT_ABILITY',					'KIND_MODIFIER') ;
+
+INSERT OR IGNORE INTO DynamicModifiers 
+(ModifierType,							CollectionType,				EffectType)
+VALUES
+('DB_DM_GRANT_ABILITY',					'COLLECTION_OWNER',			'EFFECT_GRANT_ABILITY') ;
+
+-- Grant all units ability
+INSERT OR IGNORE INTO Types
+(Type,									Kind)
+VALUES
+('DB_DM_GRANT_ABILITY_ALL_UNITS',		'KIND_MODIFIER') ;
+
+INSERT OR IGNORE INTO DynamicModifiers 
+(ModifierType,							CollectionType,				EffectType)
+VALUES
+('DB_DM_GRANT_ABILITY_ALL_UNITS',		'COLLECTION_ALL_UNITS',		'EFFECT_GRANT_ABILITY') ;
+
+-- Grant player units ability
+INSERT OR IGNORE INTO Types
+(Type,									Kind)
+VALUES
+('DB_DM_GRANT_ABILITY_PLAYER_UNITS',	'KIND_MODIFIER') ;
+
+INSERT OR IGNORE INTO DynamicModifiers 
+(ModifierType,							CollectionType,				EffectType)
+VALUES
+('DB_DM_GRANT_ABILITY_PLAYER_UNITS',	'COLLECTION_PLAYER_UNITS',	'EFFECT_GRANT_ABILITY') ;
 
 
 

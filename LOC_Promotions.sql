@@ -79,6 +79,28 @@ INSERT OR REPLACE INTO LocalizedText
 ('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_INFANTRY_OBLIQUE_ORDER_CHAPTER_HISTORY_PARA_1', 'The oblique order is a military tactic among heavy infantry battles where an attacking army deploys an asymmetical line formation in an attempt to overwhelm an enemy flank. The commander concentrates the majority of their strength (elite units and/or a greater quantity of troops) on one flank while the remainder fixes the enemy line. This technique allows a commander with weaker or equal total forces to achieve a quick local superiority in numbers on one side and then snowball that advantage down the rest of the line.[NEWLINE][NEWLINE]In the oblique order attack, the line is intentionally thinner on one side in order to concentrate troops on the other side. Then, when meeting the opposing heavy infantry, they would then create an angled (oblique) engagement with the enemy, refusing complete engagement on the weakened flank, but attacking in full on the stronger flank with a concentration of force. Once the strong flank had dominated its oppososition, the commander would wheel the troops 90 degrees to roll up the enemy line.[NEWLINE][NEWLINE]The first recorded use of this sort of tactic was in 371 BCE at the Battle of Leuctra, in Greece, when the Thebans under Epaminondas defeated the Spartans by highly enforcing one flank to fifty rows deep, rather than spreading forces parsimoniously. Philip of Macedon learned Epaminondas'' technique while held prisoner at Thebes, and his descendants (including Alexander), used it in their campaigns. King Frederick II of Prussia also particularly favored this tactic.', 'en_US'),
 
 
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_NAME', 'Shock Tactics', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_DESCRIPTION', 'Adj enemies defending vs Heavy Cav (including this one):[NEWLINE]Triple the defender''s loss of [ICON_Strength] Combat Strength due to damage', 'en_US'),
+('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_CAVALRY_SHOCK_TACTICS_CHAPTER_HISTORY_PARA_1', 'Shock tactics or a shock attack is the name of an offensive maneuver which attempts to place the enemy under psychological pressure by a rapid and fully committed advance aimed to cause the enemy to retreat and be routed. Shock tactics typically involved a higher degree of risk in order to attain a decisive result. The most famous shock tactic is the medieval cavalry charge. This attack was conducted by heavily armoured cavalry armed with lances galloping at full speed against an enemy formation timed to exploit a gap or other weakness.', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_HAMMER_AND_ANVIL_NAME', 'Hammer and Anvil', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_HAMMER_AND_ANVIL_DESCRIPTION', 'Adjacent enemies that are also adjacent to our Heavy Infantry:[NEWLINE]-10 [ICON_Strength] defense vs Heavy Cavalry (including this one)', 'en_US'),
+('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_CAVALRY_HAMMER_AND_ANVIL_CHAPTER_HISTORY_PARA_1', 'The hammer and anvil is a relatively simple maneuver. It begins with two heavy infantry forces engaged in a frontal assault. While the infantry lines are fixed in the engagement, the cavalry force maneuvers around the enemy and attacks from behind, "hammering" the foes it into the allied infantry ("anvil"). It was especially favored by Alexander the Great and Eastern cataphracts.', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_MORALE_BOOST_NAME', 'Morale Boost', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_MORALE_BOOST_DESCRIPTION', 'Adjacent friendly units:[NEWLINE]+3 [ICON_Strength] Combat Strength on attack and defense', 'en_US'),
+('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_CAVALRY_MORALE_BOOST_CHAPTER_HISTORY_PARA_1', 'Heavy Cavalry troops were typically the wealthiest and best trained soldiers in the army because it took a lot of money to outfit a horse and rider with the best weapons and armor, which gives rise to the connection between nobility and knights/equites/cataphracts. Some heavy cavalry units, like the Winged Hussars of Poland, adopted distinctive costumes, ornate helmets, and gilded weapons to reinforce their prestige. Ordinary troops would often cheer as their nation''s best-trained nobles joined the battlefield.', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_FLYING_WEDGE_NAME', 'Flying Wedge', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_FLYING_WEDGE_DESCRIPTION', '+5 [ICON_Strength] Combat Strength when attacking Heavy Infantry units', 'en_US'),
+('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_CAVALRY_FLYING_WEDGE_CHAPTER_HISTORY_PARA_1', 'A flying wedge (also called flying V or wedge formation) occurs when troops move forward in a triangular formation. The men were deployed in a triangular or trapezoid formation with the tip leading the way. According to Arrian and Asclepiodotus, the wedge was first used by the Scythians, and then the Thracians. Philip II of Macedon (and his son Alexander) adopted it from them as the main formation of his Companion cavalry. The advantage of the wedge was that it offered a narrow point for piercing enemy formations and concentrated the leaders at the front. It was easier to turn than a square formation because everyone followed the leader at the apex, "like a flight of cranes."', 'en_US'),
+
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_FEINT_NAME', 'Feint', 'en_US'),
+('BW_LOC_PROMOTION_HEAVY_CAVALRY_FEINT_DESCRIPTION', 'Adjacent enemies: -5 [ICON_Strength] defense vs land melee attacks.[NEWLINE]This unit: -5 [ICON_Strength] when attacking (because it''s not feinting).', 'en_US'),
+('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_CAVALRY_FEINT_CHAPTER_HISTORY_PARA_1', 'A feint is a "fake" attack designed to draw defensive action toward one point of the battlefield as a diversion. The cavalry rides in as if they were attacking, forcing the enemy to concentrate defensive manpower in that area which weakens their manpower in another area. The cavalry quickly calls off the attack just before engagement, avoiding casualties on both sides... but a simultaneous attack on the enemy from another angle will be less capable of defending.', 'en_US'),
+
+
+
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_NAME', 'Testudo Formation', 'en_US'),
 ('BW_LOC_PROMOTION_HEAVY_INFANTRY_TESTUDO_DESCRIPTION', '+10 [ICON_Strength] Combat Strength when defending ranged attacks', 'en_US'),
 ('LOC_PEDIA_UNITPROMOTIONS_PAGE_BW_PROMOTION_HEAVY_INFANTRY_TESTUDO_CHAPTER_HISTORY_PARA_1', 'In Ancient Roman warfare, the testudo (tortoise) formation was a type of shield wall commonly used by the Roman Legions where the men would align their shields to protect the unit from all incoming projectiles. The first row of men would hold their shields from about the height of their shins to their eyes, so as to cover the formation''s front. The men in the back ranks would place their shields over their heads to protect the formation from above, balancing the shields on their helmets, overlapping them. If necessary, the legionaries on the sides and rear of the formation could stand sideways or backwards with shields held as the front rows, so as to protect the formation''s sides and rear. This reduced the speed and mobility of the formation, but offered excellent protection against arrows and other missile attacks.', 'en_US'),
@@ -164,27 +186,9 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_PROMOTION_GIANT_DEATH_ROBOT__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_GIANT_DEATH_ROBOT__NAME', '', 'en_US'),
 ('BW_LOC_PROMOTION_GIANT_DEATH_ROBOT__NAME', '', 'en_US'),
-
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_HEAVY_CAVALRY__NAME', '', 'en_US'),
 */
 
 
-
-/*
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-('BW_LOC_PROMOTION_LIGHT_CAVALRY__NAME', '', 'en_US'),
-*/
 
 
 /*
@@ -272,6 +276,9 @@ INSERT OR REPLACE INTO LocalizedText
 
 ('BW_LOC_PROMOTION_RECON_PATHFINDER_NAME', 'Pathfinder', 'en_US'),
 ('BW_LOC_PROMOTION_RECON_PATHFINDER_DESCRIPTION', 'Ignore terrain movement costs', 'en_US'),
+
+('BW_LOC_PROMOTION_RECON_MAPMAKER_NAME', 'Mapmaker', 'en_US'),
+('BW_LOC_PROMOTION_RECON_MAPMAKER_DESCRIPTION', 'Units on same tile:[NEWLINE]Ignore terrain movement costs', 'en_US'),
 
 ('BW_LOC_PROMOTION_RECON_TROOP_INTEL_NAME', 'Troop Intel', 'en_US'),
 ('BW_LOC_PROMOTION_RECON_TROOP_INTEL_DESCRIPTION', 'Adjacent enemy units attack and defend with -3 [ICON_Strength] Combat Strength', 'en_US'),

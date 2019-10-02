@@ -18,7 +18,7 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>DB - WE Naval Balance</AssemblyName>
     <RootNamespace>DB - WE Naval Balance</RootNamespace>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="GameDataEarly"><Properties><LoadOrder>110</LoadOrder></Properties><File priority="1">DB_lib.sql</File><File priority="2">Tags_ReqSets_DMs.sql</File><File priority="3">GameDataEarly.sql</File><File priority="4">UnitModifiers.sql</File><File priority="5">UnitAbilities.sql</File><File priority="6">UnitPromotions.sql</File><File priority="7">UnitUpdates.sql</File></UpdateDatabase><UpdateText id="LOC"><Properties><LoadOrder>110</LoadOrder></Properties><File>LOC_Units.sql</File><File>LOC_Promotions.sql</File><File>LOC_Abilities.sql</File><File>LOC_Previews.sql</File></UpdateText><UpdateDatabase id="GameDataLate"><Properties><LoadOrder>9999999</LoadOrder></Properties><File priority="1">GameDataLate.sql</File><File priority="2">Cleanup.sql</File></UpdateDatabase><AddGameplayScripts id="NewAction"><File>BW_Combat.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="GameDataEarly"><Properties><LoadOrder>110</LoadOrder></Properties><File priority="1">DB_lib.sql</File><File priority="2">Tags_ReqSets_DMs.sql</File><File priority="3">GameDataEarly.sql</File><File priority="4">UnitModifiers.sql</File><File priority="5">UnitAbilities.sql</File><File priority="6">UnitPromotions.sql</File><File priority="7">UnitUpdates.sql</File></UpdateDatabase><UpdateText id="LOC"><Properties><LoadOrder>110</LoadOrder></Properties><File>LOC_Units.sql</File><File>LOC_Promotions.sql</File><File>LOC_Abilities.sql</File><File>LOC_Previews.sql</File></UpdateText><UpdateDatabase id="GameDataLate"><Properties><LoadOrder>9999999</LoadOrder></Properties><File priority="1">GameDataLate.sql</File><File priority="2">Cleanup.sql</File></UpdateDatabase><AddGameplayScripts id="BW_Combat"><File>BW_Combat.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
     <AssociationData><![CDATA[<Associations>
   <Dependency type="Mod" title="Warfare Expanded Complete" id="d5fd68b9-7c98-4764-91f6-5c6de9fa7f08" />
 </Associations>]]></AssociationData>
@@ -43,6 +43,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="LOC_Abilities.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LOC_Policies.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="LOC_Previews.sql">

@@ -1,11 +1,22 @@
--- All combat units start with a promotion
-UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
-
 -- Remove all MandatoryObsoletes
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
+-- RECON units get their own tile layer
+UPDATE Units SET FormationClass = 'BW_FORMATION_CLASS_RECON' WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
+
+-- LAND_RANGED units moved to support tile layer
+UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED' ;
+
+-- SIEGE units moved to support tile layer
+UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'BW_PROMOTION_CLASS_SIEGE' ;
+
+
+-- All combat units start with a promotion
+UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
+
 -- Heavy Inf requires a population
 UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' ;
+
 
 -- Nothing has ZOC by default
 UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;
@@ -33,24 +44,26 @@ SELECT TypeTags.Type, 'BW_CLASS_' || BW_NewUnitClasses.ClassName
 FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' 
 WHERE BW_NewUnitClasses.ClassName != 'RECON' ;
 
--- Reclass Ranged abilities to Land Ranged
-UPDATE TypeTags SET Tag = 'BW_CLASS_LAND_RANGED' WHERE Tag = 'CLASS_RANGED' ;
+-- Copy Ranged abilities to Land Ranged, then delete Ranged
+INSERT OR REPLACE INTO TypeTags (Type, Tag)
+SELECT Type, 'BW_CLASS_LAND_RANGED' FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
+DELETE FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
 
--- Reclass Melee abilities to Heavy Infantry
-UPDATE TypeTags SET Tag = 'BW_CLASS_HEAVY_INFANTRY' WHERE Tag = 'CLASS_MELEE' ;
+-- Copy Melee abilities to Heavy Infantry, then delete Melee
+INSERT OR REPLACE INTO TypeTags (Type, Tag)
+SELECT Type, 'BW_CLASS_HEAVY_INFANTRY' FROM TypeTags WHERE Tag = 'CLASS_MELEE' ;
+DELETE FROM TypeTags WHERE Tag = 'CLASS_MELEE' ;
+
 
 -- Copy Heavy Infantry abilities to Light Infantry
--- DELETE FROM TypeTags WHERE Tag = 'BW_CLASS_LIGHT_INFANTRY' ;
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT Type, 'BW_CLASS_LIGHT_INFANTRY' FROM TypeTags WHERE Tag = 'BW_CLASS_HEAVY_INFANTRY' ;
 
 -- Copy Light Infantry abilities to Monk
--- DELETE FROM TypeTags WHERE Tag = 'BW_CLASS_MONK' ;
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT Type, 'BW_CLASS_MONK' FROM TypeTags WHERE Tag = 'BW_CLASS_LIGHT_INFANTRY' ;
 
 -- Copy Naval Ranged abilities to Naval Bombard
--- DELETE FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_BOMBARD' ;
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT Type, 'BW_CLASS_NAVAL_BOMBARD' FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_RANGED' ;
 
