@@ -1,15 +1,13 @@
+-- Set up normal damage decrement
+INSERT OR REPLACE INTO GameModifiers (ModifierId) VALUES ('BW_MOD_ALL_UNITS_ATTACH_NORMAL_DAMAGE_DECREMENT') ;
+INSERT OR REPLACE INTO GameModifiers (ModifierId) VALUES ('BW_MOD_ALL_UNITS_ATTACH_TEST_ABILITY') ;
+
+
 -- Remove all MandatoryObsoletes
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
--- RECON units get their own tile layer
-UPDATE Units SET FormationClass = 'BW_FORMATION_CLASS_RECON' WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
-
--- LAND_RANGED units moved to support tile layer
-UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED' ;
-
--- SIEGE units moved to support tile layer
-UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'BW_PROMOTION_CLASS_SIEGE' ;
-
+-- RECON units moved to support tile layer
+UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
 
 -- All combat units start with a promotion
 UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
@@ -17,6 +15,8 @@ UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON'
 -- Heavy Inf requires a population
 UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' ;
 
+-- Medic heal rate reduced to 5 (base = 20) because we added the ability for adj units to heal after any action
+UPDATE ModifierArguments SET Value = 5 WHERE ModifierId = 'MEDIC_INCREASE_HEAL_RATE' AND Name = 'Amount' ;
 
 -- Nothing has ZOC by default
 UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;

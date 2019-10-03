@@ -93,19 +93,18 @@ INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, Requirement
 SELECT 'BW_REQSET_OPPONENT_IS_' || ClassName, 'BW_REQ_OPPONENT_IS_' || ClassName FROM BW_NewUnitClasses ;
 
 
--- Opponent anything but a [Promotion Class]
+-- Opponent has Tag
 INSERT OR REPLACE INTO Requirements (RequirementId, RequirementType) 
-SELECT 'BW_REQ_OPPONENT_ANYTHING_BUT_A_' || ClassName, 'REQUIREMENT_OPPONENT_UNIT_PROMOTION_CLASS_MATCHES' FROM BW_NewUnitClasses ;
+SELECT 'BW_REQ_OPPONENT_HAS_' || ClassName || '_TAG', 'REQUIREMENT_OPPONENT_UNIT_TAG_MATCHES' FROM BW_NewUnitClasses ;
 
 INSERT OR REPLACE INTO RequirementArguments (RequirementId, Name, Value)
-SELECT 'BW_REQ_OPPONENT_ANYTHING_BUT_A_' || ClassName, 'UnitPromotionClass', CASE ClassName WHEN 'RECON' THEN 'PROMOTION_CLASS_' ELSE 'BW_PROMOTION_CLASS_' END  || ClassName FROM BW_NewUnitClasses ;
+SELECT 'BW_REQ_OPPONENT_HAS_' || ClassName || '_TAG', 'Tag', 'BW_CLASS_' || ClassName FROM BW_NewUnitClasses ;
 
 INSERT OR REPLACE INTO RequirementSets (RequirementSetId, RequirementSetType)
-SELECT 'BW_REQSET_OPPONENT_ANYTHING_BUT_A_' || ClassName, 'REQUIREMENTSET_TEST_ALL' FROM BW_NewUnitClasses ;
+SELECT 'BW_REQSET_OPPONENT_HAS_' || ClassName || '_TAG', 'REQUIREMENTSET_TEST_ALL' FROM BW_NewUnitClasses ;
 
 INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, RequirementId)
-SELECT 'BW_REQSET_OPPONENT_ANYTHING_BUT_A_' || ClassName, 'BW_REQ_OPPONENT_ANYTHING_BUT_A_' || ClassName FROM BW_NewUnitClasses ;
-
+SELECT 'BW_REQSET_OPPONENT_HAS_' || ClassName || '_TAG', 'BW_REQ_OPPONENT_HAS_' || ClassName || '_TAG' FROM BW_NewUnitClasses ;
 
 
 
@@ -129,23 +128,6 @@ SELECT 'BW_REQSET_DEFENDING_' || ClassName, 'BW_REQ_OPPONENT_IS_' || ClassName F
 
 INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, RequirementId)
 SELECT 'BW_REQSET_DEFENDING_' || ClassName, 'DB_REQ_DEFENDING' FROM BW_NewUnitClasses ;
-
-
--- Defending anything but a [Promotion Class]
-INSERT OR REPLACE INTO RequirementSets (RequirementSetId, RequirementSetType)
-SELECT 'BW_REQSET_DEFENDING_ANYTHING_BUT_A_' || ClassName, 'REQUIREMENTSET_TEST_ALL' FROM BW_NewUnitClasses ;
-
-INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, RequirementId)
-SELECT 'BW_REQSET_DEFENDING_ANYTHING_BUT_A_' || ClassName, 'BW_REQ_OPPONENT_ANYTHING_BUT_A_' || ClassName FROM BW_NewUnitClasses ;
-
-INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, RequirementId)
-SELECT 'BW_REQSET_DEFENDING_ANYTHING_BUT_A_' || ClassName, 'DB_REQ_DEFENDING' FROM BW_NewUnitClasses ;
-
-INSERT OR REPLACE INTO Requirements (RequirementId, RequirementType) 
-SELECT 'BW_REQ_DEFENDING_ANYTHING_BUT_A_' || ClassName, 'REQUIREMENT_REQUIREMENTSET_IS_MET' FROM BW_NewUnitClasses ;
-
-INSERT OR REPLACE INTO RequirementArguments (RequirementId, Name, Value)
-SELECT 'BW_REQ_DEFENDING_ANYTHING_BUT_A_' || ClassName, 'RequirementSetId', 'BW_REQSET_DEFENDING_ANYTHING_BUT_A_' || ClassName FROM BW_NewUnitClasses ;
 
 
 
@@ -225,96 +207,7 @@ INSERT OR REPLACE INTO RequirementSetRequirements (RequirementSetId, Requirement
 SELECT 'BW_REQSET_ANYTHING_BUT_A_' || ClassName || '_AND_ADJACENT_TO_OR_SAME_TILE_AS_OWNER', 'DB_REQ_ADJACENT_TO_OR_SAME_TILE_AS_OWNER' FROM BW_NewUnitClasses ;
 
 
-INSERT OR REPLACE INTO RequirementSets 
-(RequirementSetId,							RequirementSetType)
-VALUES 
-('BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT',	'REQUIREMENTSET_TEST_ALL')
-;
-
-INSERT OR REPLACE INTO RequirementSetRequirements 
-(RequirementSetId, RequirementId)
-VALUES
--- ('BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT',	'BW_REQ_HAS_SHOCK_TACTICS_ABILITY'),
---('BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT',	'DB_REQ_DEFENDING'),
-('BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT',	'BW_REQ_OPPONENT_IS_HEAVY_CAVALRY')
-;
-
-INSERT OR REPLACE INTO Requirements 
-(RequirementId,							RequirementType,						Inverse) 
-VALUES
-('BW_REQ_FOR_SHOCK_DAMAGE_DECREMENT',	'REQUIREMENT_REQUIREMENTSET_IS_MET',	0)
-;
-
-INSERT OR REPLACE INTO RequirementArguments 
-(RequirementId,							Name,				Value)
-VALUES
-('BW_REQ_FOR_SHOCK_DAMAGE_DECREMENT',	'RequirementSetId',	'BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT')
-;
-
-
-INSERT OR REPLACE INTO Requirements 
-(RequirementId,							RequirementType,						Inverse) 
-VALUES
-('BW_REQ_FOR_NORMAL_DAMAGE_DECREMENT',	'REQUIREMENT_REQUIREMENTSET_IS_MET',	0)
-;
-
-INSERT OR REPLACE INTO RequirementArguments 
-(RequirementId,							Name,				Value)
-VALUES
-('BW_REQ_FOR_NORMAL_DAMAGE_DECREMENT',	'RequirementSetId',	'BW_REQSET_FOR_SHOCK_DAMAGE_DECREMENT')
-;
-
-
-INSERT OR REPLACE INTO RequirementSets 
-(RequirementSetId,							RequirementSetType)
-VALUES 
-('BW_REQSET_FOR_NORMAL_DAMAGE_DECREMENT',	'REQUIREMENTSET_TEST_ALL') ;
-
-INSERT OR REPLACE INTO RequirementSetRequirements 
-(RequirementSetId, RequirementId)
-VALUES
-('BW_REQSET_FOR_NORMAL_DAMAGE_DECREMENT',	'BW_REQ_FOR_NORMAL_DAMAGE_DECREMENT')
-;
-
-
 -- TODO: REQs based on Unit Tags (see OPPONENT_IS_ANTI_AIR_REQUIREMENT, could use for things like CLASS_ANTI_AIR, CLASS_STEALTH, CLASS_SIEGE, CLASS_SPY, CLASS_SNIPER)
-
--- REQSETs for Damage Decrements
--- Also consider REQUIREMENT_UNIT_HAS_ABILITY with Inverse = 1 (see "AOE_REQUIRES_NO_TRIPLE_MOVEMENT_ABILITY" in Alexader scenario)
-INSERT OR REPLACE INTO RequirementSets
-(RequirementSetId,						RequirementSetType)
-VALUES
-('BW_REQSET_TRIPLE_DAMAGE_DECREMENT',	'REQUIREMENTSET_TEST_ALL') ;
-
-INSERT OR REPLACE INTO RequirementSetRequirements
-(RequirementSetId,						RequirementId)
-VALUES
-('BW_REQSET_TRIPLE_DAMAGE_DECREMENT',	'DB_REQ_DEFENDING'),
-('BW_REQSET_TRIPLE_DAMAGE_DECREMENT',	'BW_REQ_OPPONENT_IS_HEAVY_CAVALRY') ;
-
-INSERT OR REPLACE INTO Requirements
-(RequirementId,						RequirementType,						Inverse) 
-VALUES
-('BW_REQ_TRIPLE_DAMAGE_DECREMENT',	'REQUIREMENT_REQUIREMENTSET_IS_MET',	0),
-('BW_REQ_NORMAL_DAMAGE_DECREMENT',	'REQUIREMENT_REQUIREMENTSET_IS_MET',	1) ;
-
-INSERT OR REPLACE INTO RequirementArguments
-(RequirementId,						Name,				Value)
-VALUES
-('BW_REQ_TRIPLE_DAMAGE_DECREMENT',	'RequirementSetId',	'BW_REQSET_TRIPLE_DAMAGE_DECREMENT'),
-('BW_REQ_NORMAL_DAMAGE_DECREMENT',	'RequirementSetId',	'BW_REQSET_TRIPLE_DAMAGE_DECREMENT') ;
-
-INSERT OR REPLACE INTO RequirementSets
-(RequirementSetId,						RequirementSetType)
-VALUES
-('BW_REQSET_NORMAL_DAMAGE_DECREMENT',	'REQUIREMENTSET_TEST_ALL') ;
-
-INSERT OR REPLACE INTO RequirementSetRequirements
-(RequirementSetId,						RequirementId)
-VALUES
-('BW_REQSET_NORMAL_DAMAGE_DECREMENT',	'BW_REQ_NORMAL_DAMAGE_DECREMENT') ;
-
-
 
 
 

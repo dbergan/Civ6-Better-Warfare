@@ -4,8 +4,8 @@
 -- Set baseline support to 1 CS because modifiers are all in terms of percentages (standard = 2)
 -- UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
 
--- Set baseline damage multipler to 100 because modifier is in terms of percentages (standard = 10; also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
-UPDATE GlobalParameters SET Value = 30 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;
+-- Set baseline damage multipler to 20 for Troop Intel because modifier only adjusts downward by percentage (standard = 10; also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
+UPDATE GlobalParameters SET Value = 20 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;
 
 -- ***************** TESTING *****************************
 -- Takes all randomness out of combat (damage is always 30 among equal CS units)

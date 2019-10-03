@@ -3,7 +3,7 @@
 INSERT OR REPLACE INTO LocalizedText 
 (Tag, Text, Language) VALUES
 
-('BW_LOC_RECON_GENERAL', '[NEWLINE][NEWLINE]Recon units cannot attack, but excel at gathering information. By default they can see through terrain features (like woods and rainforests) and reveal stealth units. They receive experience by acquiring tribal villages, discovering natural wonders, and being adjacent to battles.{BW_LOC_RECON_PROMOTIONS}', 'en_US'),
+('BW_LOC_RECON_GENERAL', '[NEWLINE][NEWLINE]Recon units are support units that cannot attack, but instead excel at gathering information. By default they can see through terrain features (like woods and rainforests) and reveal stealth units. They receive experience by acquiring tribal villages, discovering natural wonders, and being adjacent to battles.{BW_LOC_RECON_PROMOTIONS}', 'en_US'),
 ('BW_LOC_RECON_PROMOTIONS', ' Promotions include:[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_DOUBLE_TIME_NAME} ({BW_LOC_PROMOTION_DOUBLE_TIME_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_SPYGLASS_NAME} ({BW_LOC_PROMOTION_SPYGLASS_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_RECON_PATHFINDER_NAME} ({BW_LOC_PROMOTION_RECON_PATHFINDER_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_RECON_DISGUISE_NAME} ({BW_LOC_PROMOTION_RECON_DISGUISE_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_ELUSIVE_NAME} ({BW_LOC_PROMOTION_ELUSIVE_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_RECON_TROOP_INTEL_NAME} ({BW_LOC_PROMOTION_RECON_TROOP_INTEL_DESCRIPTION})[NEWLINE][ICON_Bullet]{BW_LOC_PROMOTION_STEALTH_NAME} ({BW_LOC_PROMOTION_STEALTH_DESCRIPTION})', 'en_US'),
 
 ('BW_LOC_HEAVY_INFANTRY_GENERAL', ' Reduces city''s [ICON_Citizen] population by 1 when completed.[NEWLINE][NEWLINE]Heavy Infantry units are your bulldozers; very powerful, but slow and expensive. They cost 1 population to make, but have the strongest combat values of the era. Heavy Infantry is vulnerable to harrassment from enemy Light Cavalry, Light Infantry, and Land Ranged units, but none of these can withstand a direct attack. And if you bring your own Light Cavalry, Light Infantry, and Land Ranged units, you can receive significant support and flanking bonuses.{BW_LOC_HEAVY_INFANTRY_PROMOTIONS}', 'en_US'),
@@ -26,6 +26,8 @@ INSERT OR REPLACE INTO LocalizedText
 ('LOC_UNIT_WARRIOR_DESCRIPTION', 'Ancient era Heavy Infantry unit.{BW_LOC_HEAVY_INFANTRY_GENERAL}', 'en_US'),
 ('LOC_UNIT_SLINGER_DESCRIPTION', 'Ancient era Light Infantry unit.{BW_LOC_LIGHT_INFANTRY_GENERAL}', 'en_US'),
 
+
+('LOC_UNIT_MEDIC_DESCRIPTION', 'Industrial era support unit. Adjacent units get +5 healing and can heal after any action.', 'en_US'),
 
 
 ('LOC_UNIT_GALLEY_DESCRIPTION', 'Ancient era Naval Melee unit. Can only operate on coastal waters until Cartography is researched.', 'en_US'),
