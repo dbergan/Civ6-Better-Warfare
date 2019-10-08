@@ -1,16 +1,43 @@
+-- Set baseline flanking to 1 CS because modifiers are all in terms of percentages (standard = 2)
+-- UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_FLANKING_BONUS_MODIFIER' ;
+
+-- Set baseline support to 1 CS because modifiers are all in terms of percentages (standard = 2)
+-- UPDATE GlobalParameters SET Value = 1 WHERE Name = 'COMBAT_SUPPORT_BONUS_MODIFIER' ;
+
+-- Set baseline damage multipler to 20 for Troop Intel because modifier only adjusts downward by percentage (standard = 10; also exists: COMBAT_WOUNDED_DISTRICT_DAMAGE_MULTIPLIER)
+UPDATE GlobalParameters SET Value = 20 WHERE Name = 'COMBAT_WOUNDED_DAMAGE_MULTIPLIER' ;
+
+-- ***************** TESTING *****************************
+-- Takes all randomness out of combat (damage is always 30 among equal CS units)
+UPDATE GlobalParameters SET Value = 30 WHERE Name = 'COMBAT_BASE_DAMAGE' ;
+UPDATE GlobalParameters SET Value = 0 WHERE Name = 'COMBAT_MAX_EXTRA_DAMAGE' ;
+-- ***************** TESTING *****************************
+
 -- Set up normal damage decrement
 INSERT OR REPLACE INTO GameModifiers (ModifierId) VALUES ('BW_MOD_ALL_UNITS_ATTACH_NORMAL_DAMAGE_DECREMENT') ;
-INSERT OR REPLACE INTO GameModifiers (ModifierId) VALUES ('BW_MOD_ALL_UNITS_ATTACH_TEST_ABILITY') ;
 
+-- Melee attacks from City and Encampment tiles -10
+INSERT OR REPLACE INTO GameModifiers (ModifierId) VALUES ('BW_MOD_MELEE_ATTACKS_FROM_CITIES') ;
+
+-- Cities and Encampments only have range of 1
+UPDATE Districts_XP2 SET AttackRange = 1 WHERE DistrictType = 'DISTRICT_CITY_CENTER' OR DistrictType = 'DISTRICT_ENCAMPMENT' ;
 
 -- Remove all MandatoryObsoletes
 UPDATE Units SET MandatoryObsoleteTech = NULL, MandatoryObsoleteCivic = NULL ;
 
--- RECON units moved to support tile layer
+-- Make sure Recon units have no combat
+UPDATE Units SET Combat = 0 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
+
+
+
+-- Recon units moved to support tile layer
 UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
 
 -- All combat units start with a promotion
 UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
+
+-- Change starting unit from Warrior to Scout
+UPDATE MajorStartingUnits SET Unit = 'UNIT_SCOUT' WHERE Unit = 'UNIT_WARRIOR' AND Era = 'ERA_ANCIENT' ;
 
 -- Heavy Inf requires a population
 UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' ;
@@ -30,43 +57,62 @@ DELETE FROM TypeTags WHERE Tag = 'CLASS_HEAVY_CHARIOT' ;
 -- Remove Anti-Cavalry and Anti-Anti-Cavalry abilities (we can add ABILITY_ANTI_CAVALRY to specific units later, not sure how a unit would be "anti-spear"...)
 DELETE FROM TypeTags WHERE Type = 'ABILITY_ANTI_CAVALRY' OR Type = 'ABILITY_ANTI_SPEAR' ;
 
--- Remove the reveal stealth tag (we assigned our own)
+-- Remove the reveal stealth tag (we made our own)
 DELETE FROM TypeTags WHERE Tag = 'CLASS_REVEAL_STEALTH' ;
 
 
--- Update vanilla REQSETS
-UPDATE RequirementArguments SET Value = 'BW_PROMOTION_CLASS_RECON' WHERE Value = 'PROMOTION_CLASS_RECON' ;
-UPDATE Units SET Combat = 0 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' ;
+-- Tags for arrowhead weaknesses
+INSERT INTO Tags 
+(Tag,								Vocabulary)
+VALUES
+('BW_WEAK_TO_BROADHEADS',			'ABILITY_CLASS'),
+('BW_WEAK_TO_BARBED_TRILOBATES',	'ABILITY_CLASS')
+;
 
--- Copy vanilla ability classes to BW (where the name is the same, e.g. Heavy Cavalry)
+
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT TypeTags.Type, 'BW_CLASS_' || BW_NewUnitClasses.ClassName 
-FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' 
-WHERE BW_NewUnitClasses.ClassName != 'RECON' ;
+SELECT UnitType, 'BW_WEAK_TO_BROADHEADS' FROM Units WHERE 
+	PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY' OR
+	PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_INFANTRY' OR
+	PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED' OR
+	PromotionClass = 'BW_PROMOTION_CLASS_SIEGE' 
+;
 
--- Copy Ranged abilities to Land Ranged, then delete Ranged
 INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_LAND_RANGED' FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
-DELETE FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
+SELECT UnitType, 'BW_WEAK_TO_BARBED_TRILOBATES' FROM Units WHERE 
+	PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_CAVALRY' OR
+	PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY'
+;
 
--- Copy Melee abilities to Heavy Infantry, then delete Melee
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_HEAVY_INFANTRY' FROM TypeTags WHERE Tag = 'CLASS_MELEE' ;
-DELETE FROM TypeTags WHERE Tag = 'CLASS_MELEE' ;
+INSERT OR REPLACE INTO Requirements 
+(RequirementId,									RequirementType) 
+VALUES
+('BW_REQ_OPPONENT_HAS_BROADHEADS_TAG',			'REQUIREMENT_OPPONENT_UNIT_TAG_MATCHES'),
+('BW_REQ_OPPONENT_HAS_BARBED_TRILOBATES_TAG',	'REQUIREMENT_OPPONENT_UNIT_TAG_MATCHES')
+;
 
+INSERT OR REPLACE INTO RequirementArguments 
+(RequirementId,									Name,				Value)
+VALUES
+('BW_REQ_OPPONENT_HAS_BROADHEADS_TAG',			'Tag',				'BW_WEAK_TO_BROADHEADS'),
+('BW_REQ_OPPONENT_HAS_BARBED_TRILOBATES_TAG',	'Tag',				'BW_WEAK_TO_BARBED_TRILOBATES')
+;
 
--- Copy Heavy Infantry abilities to Light Infantry
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_LIGHT_INFANTRY' FROM TypeTags WHERE Tag = 'BW_CLASS_HEAVY_INFANTRY' ;
+INSERT OR REPLACE INTO RequirementSets 
+(RequirementSetId,							RequirementSetType)
+VALUES
+('BW_REQSET_LAND_RANGED_BROADHEADS',		'REQUIREMENTSET_TEST_ALL'),
+('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES', 'REQUIREMENTSET_TEST_ALL')
+;
 
--- Copy Light Infantry abilities to Monk
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_MONK' FROM TypeTags WHERE Tag = 'BW_CLASS_LIGHT_INFANTRY' ;
-
--- Copy Naval Ranged abilities to Naval Bombard
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_NAVAL_BOMBARD' FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_RANGED' ;
-
+INSERT OR REPLACE INTO RequirementSetRequirements 
+(RequirementSetId,							RequirementId)
+VALUES
+('BW_REQSET_LAND_RANGED_BROADHEADS',		'BW_REQ_OPPONENT_HAS_BROADHEADS_TAG'),
+('BW_REQSET_LAND_RANGED_BROADHEADS',		'DB_REQ_ATTACKING'),
+('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES',	'BW_REQ_OPPONENT_HAS_BARBED_TRILOBATES_TAG'),
+('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES',	'DB_REQ_ATTACKING')
+;
 
 
 
