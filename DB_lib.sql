@@ -20,6 +20,8 @@ VALUES
 ('DB_CLASS_NAVAL_RANGED_ATTACKER',	'ABILITY_CLASS'),
 ('DB_CLASS_NAVAL_BOMBARD_ATTACKER', 'ABILITY_CLASS')
 ;
+INSERT OR IGNORE INTO Tags (Tag, Vocabulary) 
+  SELECT 'DB_CLASS_' || SUBSTR(UnitType, 6), 'ABILITY_CLASS' FROM Units ;
 
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_ALL' FROM Units ;
@@ -41,6 +43,8 @@ INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_NAVAL_RANGED_ATTACKER' FROM Units WHERE FormationClass = 'FORMATION_CLASS_NAVAL' AND RangedCombat > 0 ;
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_NAVAL_BOMBARD_ATTACKER' FROM Units WHERE FormationClass = 'FORMATION_CLASS_NAVAL' AND Bombard > 0 ;
+INSERT OR IGNORE INTO TypeTags (Type, Tag)
+  SELECT UnitType, 'DB_CLASS_' || SUBSTR(UnitType, 6) FROM Units ;
 
 
 
@@ -591,6 +595,45 @@ INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementI
                                                   ('DB_REQSET_UNIT_NEAR_FRIENDLY_RELIGIOUS_CITY', 'REQUIRES_UNIT_NEAR_FRIENDLY_RELIGIOUS_CITY'),
 												  ('DB_REQSET_UNIT_NEAR_ENEMY_RELIGIOUS_CITY', 'REQUIRES_UNIT_NEAR_ENEMY_RELIGIOUS_CITY') ;
 
+
+-- Reqset for being within 2 tiles of owner (e.g. great generals)
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_AOE_OWNER_ADJACENCY', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_AOE_OWNER_ADJACENCY', 'AOE_REQUIRES_OWNER_ADJACENCY') ;
+
+-- Unit is Religious (all)
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_UNIT_IS_RELIGIOUS_ALL', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_UNIT_IS_RELIGIOUS_ALL', 'REQUIRES_UNIT_IS_RELIGIOUS_ALL') ;
+
+-- Unit is Guru
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES ('DB_REQ_UNIT_IS_GURU', 'REQUIREMENT_UNIT_TYPE_MATCHES') ;
+INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value) VALUES ('DB_REQ_UNIT_IS_GURU', 'UnitType', 'UNIT_GURU') ;
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_UNIT_IS_GURU', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_UNIT_IS_GURU', 'DB_REQ_UNIT_IS_GURU') ;
+
+-- Unit is Great Prophet
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES ('DB_REQ_UNIT_IS_GREAT_PROPHET', 'REQUIREMENT_UNIT_TYPE_MATCHES') ;
+INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value) VALUES ('DB_REQ_UNIT_IS_GREAT_PROPHET', 'UnitType', 'UNIT_GREAT_PROPHET') ;
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_UNIT_IS_GREAT_PROPHET', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_UNIT_IS_GREAT_PROPHET', 'DB_REQ_UNIT_IS_GREAT_PROPHET') ;
+
+-- Unit next to Guru
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES ('DB_REQ_NEXTTO_GURU', 'REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TYPE_MATCHES') ;
+INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value) VALUES ('DB_REQ_NEXTTO_GURU', 'UnitType', 'UNIT_GURU') ;
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_NEXTTO_GURU', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_NEXTTO_GURU', 'DB_REQ_NEXTTO_GURU') ;
+
+-- Unit next to Great Prophet
+
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES ('DB_REQ_NEXTTO_GREAT_PROPHET', 'REQUIREMENT_PLOT_NEARBY_UNIT_TAG_MATCHES') ;
+INSERT OR IGNORE INTO RequirementArguments 
+(RequirementId,					Name,			Value) 
+VALUES 
+('DB_REQ_NEXTTO_GREAT_PROPHET',	'MaxDistance',	2),
+('DB_REQ_NEXTTO_GREAT_PROPHET',	'MinDistance',	0),
+('DB_REQ_NEXTTO_GREAT_PROPHET',	'Tag',			'DB_CLASS_GREAT_PROPHET') ;
+
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES ('DB_REQSET_NEXTTO_GREAT_PROPHET', 'REQUIREMENTSET_TEST_ALL') ;
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES ('DB_REQSET_NEXTTO_GREAT_PROPHET', 'DB_REQ_NEXTTO_GREAT_PROPHET') ;
 
 /*
 -- Non-religious unit belongs to civ that founded the religion that has this belief
@@ -1330,7 +1373,9 @@ INSERT OR IGNORE INTO Types (Type, Kind) VALUES ('DB_DM_PLOT_ADJUST_POLICY_AMENI
 INSERT OR IGNORE INTO DynamicModifiers (ModifierType, CollectionType, EffectType) VALUES ('DB_DM_PLOT_ADJUST_POLICY_AMENITY', 'COLLECTION_CITY_PLOT_YIELDS', 'EFFECT_ADJUST_POLICY_AMENITY') ;
 
 
--- UNITS
+-----------------------------------------------
+-- Units
+-----------------------------------------------
 
 -- Grant promotion to units trained in this city (that follows this religion)
 --    UNITS (PromotionType)
@@ -1341,6 +1386,7 @@ INSERT OR IGNORE INTO DynamicModifiers (ModifierType, CollectionType, EffectType
 --    UNITS (Amount)
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES ('DB_DM_DAMAGE_TO_UNIT', 'KIND_MODIFIER') ;
 INSERT OR IGNORE INTO DynamicModifiers (ModifierType, CollectionType, EffectType) VALUES ('DB_DM_DAMAGE_TO_UNIT', 'COLLECTION_OWNER', 'EFFECT_ADJUST_UNIT_DAMAGE') ;
+
 
 -----------------------------------------------
 -- Player

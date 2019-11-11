@@ -24,11 +24,20 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_SCREEN_NT_LAND_MELEE_ATTACKER_NAME', 'Light Infantry Can Screen', 'en_US'),
 ('BW_LOC_ABILITY_LIGHT_INFANTRY_SCREEN_NT_LAND_MELEE_ATTACKER_DESCRIPTION', 'Screen Active (next to friendly melee unit): adjacent enemies -7 [ICON_Strength] defense in land melee battles', 'en_US'),
 
+('BW_LOC_ABILITY_WARRIOR_MONKS_DISCIPLES_NAME', 'Disciples', 'en_US'),
+('BW_LOC_ABILITY_WARRIOR_MONKS_DISCIPLES_DESCRIPTION', 'Warrior Monks and adjacent units spread their religion to nearby cities when defeating an enemy unit', 'en_US'),
+
 ('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_NAME', 'Enter Foreign Territory', 'en_US'),
 ('BW_LOC_ABILITY_ENTER_FOREIGN_TERRITORY_DESCRIPTION', 'Can enter foreign territory without penalty (e.g. ignore closed borders)', 'en_US'),
 
 ('BW_LOC_ABILITY_REVEAL_STEALTH_NAME', 'Reveal Stealth', 'en_US'),
 ('BW_LOC_ABILITY_REVEAL_STEALTH_DESCRIPTION', 'Can see stealth units within its sight range', 'en_US'),
+
+('BW_LOC_ABILITY_DOUBLE_STRIKE_NAME', 'Double Strike', 'en_US'),
+('BW_LOC_ABILITY_DOUBLE_STRIKE_DESCRIPTION', 'Can make 2 attacks in a turn', 'en_US'),
+
+('BW_LOC_ABILITY_SURVIVALIST_NAME', 'Survivalist', 'en_US'),
+('BW_LOC_ABILITY_SURVIVALIST_DESCRIPTION', 'Heal after any action', 'en_US'),
 
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_NAME', 'Ranger', 'en_US'),
 ('BW_LOC_ABILITY_SEE_THROUGH_TERRAIN_DESCRIPTION', 'Can see through terrain features (e.g. woods and rainforests)', 'en_US'),
