@@ -36,6 +36,9 @@ UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass
 -- All combat units start with a promotion
 UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
 
+-- All combat units track religion (in case they are adjacent to a Warrior Monk)
+UPDATE Units SET TrackReligion = 1 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
+
 -- Change starting unit from Warrior to Scout
 UPDATE MajorStartingUnits SET Unit = 'UNIT_SCOUT' WHERE Unit = 'UNIT_WARRIOR' AND Era = 'ERA_ANCIENT' ;
 
