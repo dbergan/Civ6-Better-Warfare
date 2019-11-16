@@ -4,14 +4,18 @@ CREATE TABLE BW_NewUnitClasses (ClassName VARCHAR) ;
 INSERT INTO BW_NewUnitClasses
 (ClassName)
 VALUES
+('AERIAL_OBSERVATION'),
 ('AIR_ATTACK'),
 ('AIR_BOMBER'),
 ('AIR_FIGHTER'),
 ('DEFENSIVE_GUN'),
 ('ELEPHANT'),
+('FIREARM_INFANTRY'),
+('FIREARM_CAVALRY'),
 ('GIANT_DEATH_ROBOT'),
 ('HEAVY_CAVALRY'),
 ('HEAVY_INFANTRY'),
+('HELICOPTER'),
 ('LAND_RANGED'),
 ('LIGHT_CAVALRY'),
 ('LIGHT_INFANTRY'),
@@ -24,6 +28,7 @@ VALUES
 ('NAVAL_RANGED'),
 ('RECON'),
 ('SIEGE'),
+('SIEGE_ARTILLERY'),
 ('SUPPORT')
 ;
 
@@ -38,34 +43,6 @@ VALUES
 -- Create new ability class tags for each unit class
 INSERT INTO Tags (Tag, Vocabulary)
 SELECT 'BW_CLASS_' || ClassName, 'ABILITY_CLASS' FROM BW_NewUnitClasses ;
-
--- Copy vanilla ability classes to BW (where the name is the same, e.g. Heavy Cavalry)
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT TypeTags.Type, 'BW_CLASS_' || BW_NewUnitClasses.ClassName 
-FROM BW_NewUnitClasses JOIN TypeTags ON TypeTags.Tag LIKE '%' || BW_NewUnitClasses.ClassName || '%' 
-WHERE BW_NewUnitClasses.ClassName != 'RECON' AND BW_NewUnitClasses.ClassName != 'ELEPHANT' AND BW_NewUnitClasses.ClassName != 'MARINE';
-
--- Copy Ranged abilities to Land Ranged, then delete Ranged
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_LAND_RANGED' FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
-DELETE FROM TypeTags WHERE Tag = 'CLASS_RANGED' ;
-
--- Copy Melee abilities to Heavy Infantry, then delete Melee and Anti-Cavalry
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_HEAVY_INFANTRY' FROM TypeTags WHERE Tag = 'CLASS_MELEE' ;
-DELETE FROM TypeTags WHERE Tag = 'CLASS_MELEE' OR Tag = 'CLASS_ANTI_CAVALRY' ;
-
--- Copy Heavy Infantry abilities to Light Infantry
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_LIGHT_INFANTRY' FROM TypeTags WHERE Tag = 'BW_CLASS_HEAVY_INFANTRY' ;
-
--- Copy Light Infantry abilities to Monk
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_MONK' FROM TypeTags WHERE Tag = 'BW_CLASS_LIGHT_INFANTRY' ;
-
--- Copy Naval Ranged abilities to Naval Bombard
-INSERT OR REPLACE INTO TypeTags (Type, Tag)
-SELECT Type, 'BW_CLASS_NAVAL_BOMBARD' FROM TypeTags WHERE Tag = 'BW_CLASS_NAVAL_RANGED' ;
 
 
 
