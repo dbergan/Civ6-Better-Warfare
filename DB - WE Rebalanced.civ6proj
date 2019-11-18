@@ -23,6 +23,7 @@
   <Dependency type="Mod" title="Warfare Expanded Complete" id="d5fd68b9-7c98-4764-91f6-5c6de9fa7f08" />
   <Dependency type="Mod" title="Steel and Thunder: Unique Units" id="a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0" />
   <Dependency type="Mod" title="Warfare Expanded Armored Assault" id="871158cc-d3e7-442f-9d3d-e1a286ebca41" />
+  <Dependency type="Mod" title="DB [ICON_Reports]Unofficial Patch[ICON_Reports]" id="c5fbc28e-bd90-4175-a0be-d088c2affea8" />
 </Associations>]]></AssociationData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
