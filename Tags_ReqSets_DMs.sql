@@ -24,12 +24,36 @@ VALUES
 ('HELICOPTER'),
 ('GIANT_DEATH_ROBOT'),
 
+
+('GALLEY'), -- triaconters (30 oars), penteconters (50 oars), monoreme (1-row), bireme (2-rows), trireme (3-rows), quinqueremes (literally a "five-oar", but actually meant that there were several rowers to certain banks of oars which made up five lines of oar handlers), dromon
+			-- galleys w catapults & heavy crossbows/ballistas
+
+			-- tactics: ramming, shooting arrows, burning arrows, Greek fire, javelins, boarding (attaching to it with grappling irons),  Breaking the enemy's oars
+			-- ramming attacks: diekplous (breaking through the enemy formation), periplous (outflanking it)
+			-- War galleys gradually began to develop heavier hulls with reinforcing beams at the waterline, where a ram would most likely hit.
+			-- pouring the content of fire pots attached to long handles is thought to have been used, especially since smoke below decks would easily disable rowers
+			-- never capable of deep ocean
+			-- heavier ships with larger rowing complements and more men per oar
+			-- The Romans baffled the ramming tactics of the Carthaginians by the invention of the corva, or crow, a plank with a spike for hooking onto enemy ships which grappled the prow of the rammer, and provided a gangway for boarders
+			-- An older and alternative way for boarding was the use of grappling hooks and planks, also a more flexible system than the corvus. Agrippa introduced a weapon with a function similar to the corvus, the harpax (grappling hook fired from a ballista mounted on the galley).
+			-- By late antiquity, in the 1st centuries AD, ramming tactics had completely disappeared along with the knowledge of the original trireme and its high speed and mobility. The ram was replaced by a long spur in the bow that was designed to break oars and to act as a boarding platform for storming enemy ships.
+			-- The Byzantine navy, the largest Mediterranean war fleet throughout most of the early Middle Ages, employed crescent formations with the flagship in the center and the heavier ships at the horns of the formation, in order to turn the enemy's flanks
+			-- Middle Ages also saw the introduction of forecastle and aftcastle, raised platforms on the fore and aft of the ship, which would provide archers with a raised platform for shooting down at enemies and a stronghold in case the ship was boarded.
+			-- Cannons and small firearms were introduced around the 14th century, but did not have any immediate effect on tactics. If anything, the forward offensive power of galleys was accentuated by naval artillery.
+(''),
+(''),
+(''),
+(''),
+(''),
+(''),
+(''),
+(''),
+
 ('NAVAL_BOMBARD'),
 ('NAVAL_CARRIER'),
 ('NAVAL_MELEE'),
 ('NAVAL_RECONRAIDER'),
 ('NAVAL_RANGED'),
-('NAVAL_RECON'),
 ('SUBMARINE'),
 
 ('AIR_ATTACK'),

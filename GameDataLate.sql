@@ -44,8 +44,8 @@ UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON'
 -- All combat units track religion (in case they are adjacent to a Warrior Monk)
 UPDATE Units SET TrackReligion = 1 WHERE PromotionClass LIKE 'BW%' ;
 
--- Heavy Inf requires a population
-UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' ;
+-- Heavy and Firearm Infantry require a population
+UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' OR PromotionClass = 'BW_PROMOTION_CLASS_FIREARM_INFANTRY' ;
 
 -- Nothing has ZOC by default
 UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;
