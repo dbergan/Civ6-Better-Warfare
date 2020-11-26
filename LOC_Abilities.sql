@@ -63,14 +63,14 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_ABILITY_NAVAL_BOMBARD_ATTACKING_SEA_NAME', 'Naval Bombard Less Effective Attacking Sea Units', 'en_US'),
 ('BW_LOC_ABILITY_NAVAL_BOMBARD_ATTACKING_SEA_DESCRIPTION', 'Naval Bombard unit: less effective attacking sea units', 'en_US'),
 
-('BW_LOC_ABILITY_NAVAL_RAIDER_ATTACKING_SEA_NAME', 'Naval Raider More Effective Attacking Sea Units', 'en_US'),
-('BW_LOC_ABILITY_NAVAL_RAIDER_ATTACKING_SEA_DESCRIPTION', 'Naval Raider unit: more effective attacking sea units', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_ATTACKING_SEA_NAME', 'Naval Raider More Effective Attacking Sea Units', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_ATTACKING_SEA_DESCRIPTION', 'Naval Raider unit: more effective attacking sea units', 'en_US'),
 
-('BW_LOC_ABILITY_NAVAL_RAIDER_ATTACKING_NAVAL_MELEE_NAME', 'Naval Raider More Effective Attacking Naval Melee Units', 'en_US'),
-('BW_LOC_ABILITY_NAVAL_RAIDER_ATTACKING_NAVAL_MELEE_DESCRIPTION', 'Naval Raider unit: more effective attacking naval melee units', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_ATTACKING_NAVAL_MELEE_NAME', 'Naval Raider More Effective Attacking Naval Melee Units', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_ATTACKING_NAVAL_MELEE_DESCRIPTION', 'Naval Raider unit: more effective attacking naval melee units', 'en_US'),
 
-('BW_LOC_ABILITY_NAVAL_RAIDER_MOVE_AFTER_ATTACK_NAME', 'Naval Raider Can Move After Attacking', 'en_US'),
-('BW_LOC_ABILITY_NAVAL_RAIDER_MOVE_AFTER_ATTACK_DESCRIPTION', 'Naval Raider units can move after attacking', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_MOVE_AFTER_ATTACK_NAME', 'Naval Raider Can Move After Attacking', 'en_US'),
+('BW_LOC_ABILITY_NAVAL_RECONRAIDER_MOVE_AFTER_ATTACK_DESCRIPTION', 'Naval Raider units can move after attacking', 'en_US'),
 
 ('BW_LOC_ABILITY_ATTACK_SUB_MOVE_AFTER_ATTACK_NAME', 'Attack Subs Can Move After Attacking', 'en_US'),
 ('BW_LOC_ABILITY_ATTACK_SUB_MOVE_AFTER_ATTACK_DESCRIPTION', 'Attack Subs can move after attacking', 'en_US')

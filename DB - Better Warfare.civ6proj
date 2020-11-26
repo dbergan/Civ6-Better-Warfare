@@ -20,10 +20,10 @@
     <RootNamespace>DB - WE Naval Balance</RootNamespace>
     <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="GameDataEarly"><Properties><LoadOrder>110</LoadOrder></Properties><File priority="1">DB_lib.sql</File><File priority="2">Tags_ReqSets_DMs.sql</File><File priority="3">GameDataEarly.sql</File></UpdateDatabase><UpdateText id="LOC"><Properties><LoadOrder>110</LoadOrder></Properties><File>LOC_Units.sql</File><File>LOC_Promotions.sql</File><File>LOC_Abilities.sql</File><File>LOC_Previews.sql</File><File>LOC_UniqueUnits.sql</File></UpdateText><UpdateDatabase id="GameDataLate"><Properties><LoadOrder>9999999</LoadOrder></Properties><File priority="1">GameDataLate.sql</File><File priority="2">Cleanup.sql</File></UpdateDatabase><AddGameplayScripts id="BW_Combat"><File>BW_Combat.lua</File></AddGameplayScripts><UpdateDatabase id="GameDataMid"><Properties><LoadOrder>111</LoadOrder></Properties><File priority="1">UnitUpdates.sql</File><File priority="2">Modifiers.sql</File><File priority="3">Abilities.sql</File><File priority="4">Promotions.sql</File><File priority="5">UniqueUnits.sql</File></UpdateDatabase></InGameActions>]]></InGameActionData>
     <AssociationData><![CDATA[<Associations>
-  <Dependency type="Mod" title="Warfare Expanded Complete" id="d5fd68b9-7c98-4764-91f6-5c6de9fa7f08" />
   <Dependency type="Mod" title="Steel and Thunder: Unique Units" id="a1fe0ce2-ca98-4998-a0c9-2aa1639eb6d0" />
   <Dependency type="Mod" title="Warfare Expanded Armored Assault" id="871158cc-d3e7-442f-9d3d-e1a286ebca41" />
   <Dependency type="Mod" title="DB [ICON_Reports]Unofficial Patch[ICON_Reports]" id="c5fbc28e-bd90-4175-a0be-d088c2affea8" />
+  <Dependency type="Mod" title="Warfare Expanded: Reloaded" id="38a49494-5ec4-46ac-b01b-9629d96950f3" />
 </Associations>]]></AssociationData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">

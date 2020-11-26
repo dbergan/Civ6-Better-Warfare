@@ -39,8 +39,8 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_MOD_NAVAL_RANGED_ATTACKING_LAND_PREVIEW', '+{1_Amount} Naval Ranged attacking land units', 'en_US'),
 ('BW_LOC_MOD_NAVAL_RANGED_ATTACKING_SEA_PREVIEW', '{1_Amount} Naval Ranged attacking sea units', 'en_US'),
 ('BW_LOC_MOD_NAVAL_BOMBARD_ATTACKING_SEA_PREVIEW', '{1_Amount} Naval Bombard attacking sea units', 'en_US'),
-('BW_LOC_MOD_NAVAL_RAIDER_ATTACKING_SEA_PREVIEW', '+{1_Amount} Naval Raider attacking sea units', 'en_US'),
-('BW_LOC_MOD_NAVAL_RAIDER_ATTACKING_NAVAL_MELEE_PREVIEW', '+{1_Amount} Naval Raider attacking Naval Melee units', 'en_US')
+('BW_LOC_MOD_NAVAL_RECONRAIDER_ATTACKING_SEA_PREVIEW', '+{1_Amount} Naval Raider attacking sea units', 'en_US'),
+('BW_LOC_MOD_NAVAL_RECONRAIDER_ATTACKING_NAVAL_MELEE_PREVIEW', '+{1_Amount} Naval Raider attacking Naval Melee units', 'en_US')
 
 
 ;

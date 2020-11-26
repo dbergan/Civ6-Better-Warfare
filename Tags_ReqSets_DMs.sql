@@ -40,14 +40,6 @@ VALUES
 			-- The Byzantine navy, the largest Mediterranean war fleet throughout most of the early Middle Ages, employed crescent formations with the flagship in the center and the heavier ships at the horns of the formation, in order to turn the enemy's flanks
 			-- Middle Ages also saw the introduction of forecastle and aftcastle, raised platforms on the fore and aft of the ship, which would provide archers with a raised platform for shooting down at enemies and a stronghold in case the ship was boarded.
 			-- Cannons and small firearms were introduced around the 14th century, but did not have any immediate effect on tactics. If anything, the forward offensive power of galleys was accentuated by naval artillery.
-(''),
-(''),
-(''),
-(''),
-(''),
-(''),
-(''),
-(''),
 
 ('NAVAL_BOMBARD'),
 ('NAVAL_CARRIER'),

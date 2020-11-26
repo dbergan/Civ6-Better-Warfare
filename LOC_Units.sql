@@ -18,7 +18,7 @@ INSERT OR REPLACE INTO LocalizedText
 ('BW_LOC_LAND_RANGED_GENERAL', '[NEWLINE][NEWLINE]', 'en_US'),
 ('BW_LOC_NAVAL_MELEE_GENERAL', '[NEWLINE][NEWLINE]Naval Melee units are great at attacking other ships. They also can attack coastal cities, but their damage is reduced by 85% when the city has walls. They don''t have a ranged attack and cannot attack land units.', 'en_US'),
 ('BW_LOC_NAVAL_RANGED_GENERAL', '[NEWLINE][NEWLINE]Naval Ranged units have a [ICON_Ranged] Ranged Attack that can attack cities, encampments, sea and land units. However, the attack is increased against land units and decreased against sea unit. Unwalled cities take normal damage, but walled cities only take half the damage done by Naval Ranged units.', 'en_US'),
-('BW_LOC_NAVAL_RAIDER_GENERAL', '[NEWLINE][NEWLINE]Naval Raider units are tricky. They fight dirty. They make short [ICON_Ranged] Ranged Attacks and can move after attacking. This attack is stronger against boats, especially Naval Melee units, and does normal damage against other targets. Walled cities only take half damage from Naval Raiders.[NEWLINE][NEWLINE]Often Naval Raiders are hidden to the enemy (unless adjacent to them), but enemy Naval Raiders can detect them within their sight range. They can also pillage shore tiles with their coastal raid ability.', 'en_US'),
+('BW_LOC_NAVAL_RECONRAIDER_GENERAL', '[NEWLINE][NEWLINE]Naval Raider units are tricky. They fight dirty. They make short [ICON_Ranged] Ranged Attacks and can move after attacking. This attack is stronger against boats, especially Naval Melee units, and does normal damage against other targets. Walled cities only take half damage from Naval Raiders.[NEWLINE][NEWLINE]Often Naval Raiders are hidden to the enemy (unless adjacent to them), but enemy Naval Raiders can detect them within their sight range. They can also pillage shore tiles with their coastal raid ability.', 'en_US'),
 ('BW_LOC_NAVAL_BOMBARD_GENERAL', '[NEWLINE][NEWLINE]Naval Bombard units are designed to bombard cities and encampments, doing full damage with their [ICON_Ranged] Ranged Attack even when they are walled. However, their attack is significantly less effective when used on land and sea units.', 'en_US'),
 */
 
@@ -48,10 +48,10 @@ INSERT OR REPLACE INTO LocalizedText
 ('LOC_UNIT_BATTLECRUISER_DESCRIPTION', 'Modern era Naval Ranged unit.{BW_LOC_NAVAL_RANGED_GENERAL}', 'en_US'),
 ('LOC_UNIT_MISSILE_CRUISER_DESCRIPTION', 'Strong Naval Ranged unit, available in the information era.{BW_LOC_NAVAL_RANGED_GENERAL}', 'en_US'),
 
-('LOC_UNIT_PRIVATEER_DESCRIPTION', 'Renaissance era Naval Raider unit.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
-('LOC_UNIT_RAIDER_DESCRIPTION', 'Industrial era Naval Raider unit.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
-('LOC_UNIT_SUBMARINE_DESCRIPTION', 'Modern era Naval Raider unit.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
-('LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION', 'Highly advanced Information era Naval Raider unit that can be armed with nuclear weapons.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_PRIVATEER_DESCRIPTION', 'Renaissance era Naval Raider unit.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_RAIDER_DESCRIPTION', 'Industrial era Naval Raider unit.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_SUBMARINE_DESCRIPTION', 'Modern era Naval Raider unit.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_NUCLEAR_SUBMARINE_DESCRIPTION', 'Highly advanced Information era Naval Raider unit that can be armed with nuclear weapons.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
 
 ('LOC_UNIT_GREEK_FIRE_SHIP_DESCRIPTION', 'Clasical era Naval Bombard unit.{BW_LOC_NAVAL_BOMBARD_GENERAL}', 'en_US'),
 ('LOC_UNIT_GALLEON_DESCRIPTION', 'Medieval era Naval Bombard unit.{BW_LOC_NAVAL_BOMBARD_GENERAL}', 'en_US'),
@@ -64,8 +64,8 @@ INSERT OR REPLACE INTO LocalizedText
 ('LOC_UNIT_ENGLISH_SHIP_OF_THE_LINE_DESCRIPTION', 'English unique Renaissance era Naval Bombard unit replacing the Ship of the Line. +7 [ICON_Strength] Combat Strength when adjacent to another First-rate.{BW_LOC_NAVAL_BOMBARD_GENERAL}', 'en_US'),
 ('LOC_UNIT_KOREAN_TURTLE_SHIP_DESCRIPTION', 'Korean unique Renaissance era Naval Melee unit. Faster and stronger than the Caravel. +5 [ICON_Strength] vs damaged units.{BW_LOC_NAVAL_MELEE_GENERAL}', 'en_US'),
 ('LOC_UNIT_CANADA_HMCS_HAIDA_DESCRIPTION', 'Canadian unique Naval Melee unit that replaces the Destroyer. +10 [ICON_Strength] versus Naval Raider class units. +5 [ICON_Strength] when in formation. Prevents friendly Traders within 4 tiles from being plundered as long as they are on a water tile.{BW_LOC_NAVAL_MELEE_GENERAL}', 'en_US'),
-('LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION', 'Ottoman unique Medieval era Naval Raider unit that replaces the Privateer. It costs no [ICON_Movement] Movement to coastal raid.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
-('LOC_UNIT_GERMAN_UBOAT_DESCRIPTION', 'German unique Modern era Naval Raider unit that replaces the Submarine. Cheaper to produce, +1 Sight, and +10 [ICON_Strength] Combat Strength when fighting on Ocean tiles.{BW_LOC_NAVAL_RAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_OTTOMAN_BARBARY_CORSAIR_DESCRIPTION', 'Ottoman unique Medieval era Naval Raider unit that replaces the Privateer. It costs no [ICON_Movement] Movement to coastal raid.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
+('LOC_UNIT_GERMAN_UBOAT_DESCRIPTION', 'German unique Modern era Naval Raider unit that replaces the Submarine. Cheaper to produce, +1 Sight, and +10 [ICON_Strength] Combat Strength when fighting on Ocean tiles.{BW_LOC_NAVAL_RECONRAIDER_GENERAL}', 'en_US'),
 ('LOC_UNIT_DE_ZEVEN_PROVINCIEN_DESCRIPTION', 'Netherlands unique renaissance era Naval Ranged unit that replaces the Frigate. +7 [ICON_Ranged] Ranged Attack Strength when attacking cities and encampments.{BW_LOC_NAVAL_RANGED_GENERAL}', 'en_US'),
 ('LOC_UNIT_INDONESIAN_JONG_DESCRIPTION', 'Indonesian unique medieval era Naval Ranged that replaces the Frigate. +5 [ICON_Strength] Combat Strength when in a formation and all formation units inherit the Jong''s [ICON_Movement] Movement speed.{BW_LOC_NAVAL_RANGED_GENERAL}', 'en_US'),
 ('LOC_UNIT_BRAZILIAN_MINAS_GERAES_DESCRIPTION', 'Brazilian unique industrial era unit that replaces the Battleship. Unlocked by Nationalism.{BW_LOC_NAVAL_BOMBARD_GENERAL}', 'en_US')
