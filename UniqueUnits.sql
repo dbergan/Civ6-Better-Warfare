@@ -1,2 +1,4 @@
+/*
 DELETE FROM TypeTags WHERE Tag = 'CLASS_CREE_OKIHTCITAW' ;
 UPDATE Units SET BuildCharges = 4 WHERE UnitType = 'UNIT_INCA_CHASQUI' ;
+*/

@@ -42,7 +42,8 @@ UPDATE Units SET FormationClass = 'FORMATION_CLASS_SUPPORT' WHERE PromotionClass
 UPDATE Units SET InitialLevel = 2 WHERE PromotionClass = 'PROMOTION_CLASS_RECON' OR PromotionClass LIKE 'BW%' ;
 
 -- All combat units track religion (in case they are adjacent to a Warrior Monk)
-UPDATE Units SET TrackReligion = 1 WHERE PromotionClass LIKE 'BW%' ;
+-- 2020-12-14 this line prevents units from being built in cities (it uses up the production and then nothing appears)
+-- UPDATE Units SET TrackReligion = 1 WHERE PromotionClass LIKE 'BW%' ;
 
 -- Heavy and Firearm Infantry require a population
 UPDATE Units SET PopulationCost = 1, PrereqPopulation = 2 WHERE PromotionClass = 'BW_PROMOTION_CLASS_HEAVY_INFANTRY' OR PromotionClass = 'BW_PROMOTION_CLASS_FIREARM_INFANTRY' ;
@@ -52,7 +53,6 @@ UPDATE Units SET ZoneOfControl = 0 WHERE UnitType NOT LIKE '%BARBARIAN%' ;
 
 -- Medic heal rate reduced to 5 (base = 20) because we added the ability for adj units to heal after any action
 UPDATE ModifierArguments SET Value = 5 WHERE ModifierId = 'MEDIC_INCREASE_HEAL_RATE' AND Name = 'Amount' ;
-
 
 
 -- ************************************************************
@@ -101,7 +101,7 @@ INSERT OR REPLACE INTO TypeTags (Type, Tag)
 SELECT UnitType, 'BW_WEAK_TO_BROADHEADS' FROM Units WHERE 
 	PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_CAVALRY' OR
 	PromotionClass = 'BW_PROMOTION_CLASS_LIGHT_INFANTRY' OR
-	PromotionClass = 'BW_PROMOTION_CLASS_LAND_RANGED' OR
+	PromotionClass = 'BW_PROMOTION_CLASS_ARCHER' OR
 	PromotionClass = 'BW_PROMOTION_CLASS_SIEGE' 
 ;
 
@@ -128,17 +128,17 @@ VALUES
 INSERT OR REPLACE INTO RequirementSets 
 (RequirementSetId,							RequirementSetType)
 VALUES
-('BW_REQSET_LAND_RANGED_BROADHEADS',		'REQUIREMENTSET_TEST_ALL'),
-('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES', 'REQUIREMENTSET_TEST_ALL')
+('BW_REQSET_ARCHER_BROADHEADS',			'REQUIREMENTSET_TEST_ALL'),
+('BW_REQSET_ARCHER_BARBED_TRILOBATES',	'REQUIREMENTSET_TEST_ALL')
 ;
 
 INSERT OR REPLACE INTO RequirementSetRequirements 
 (RequirementSetId,							RequirementId)
 VALUES
-('BW_REQSET_LAND_RANGED_BROADHEADS',		'BW_REQ_OPPONENT_HAS_BROADHEADS_TAG'),
-('BW_REQSET_LAND_RANGED_BROADHEADS',		'DB_REQ_ATTACKING'),
-('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES',	'BW_REQ_OPPONENT_HAS_BARBED_TRILOBATES_TAG'),
-('BW_REQSET_LAND_RANGED_BARBED_TRILOBATES',	'DB_REQ_ATTACKING')
+('BW_REQSET_ARCHER_BROADHEADS',			'BW_REQ_OPPONENT_HAS_BROADHEADS_TAG'),
+('BW_REQSET_ARCHER_BROADHEADS',			'DB_REQ_ATTACKING'),
+('BW_REQSET_ARCHER_BARBED_TRILOBATES',	'BW_REQ_OPPONENT_HAS_BARBED_TRILOBATES_TAG'),
+('BW_REQSET_ARCHER_BARBED_TRILOBATES',	'DB_REQ_ATTACKING')
 ;
 
 
@@ -214,4 +214,4 @@ INSERT OR IGNORE INTO TypeTags (Type, Tag)
   SELECT UnitType, 'DB_CLASS_NAVAL_BOMBARD_ATTACKER' FROM Units WHERE FormationClass = 'FORMATION_CLASS_NAVAL' AND Bombard > 0 ;
 
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
-  SELECT UnitType, 'DB_CLASS_' || SUBSTR(UnitType, 6) FROM Units ;
+  SELECT UnitType, 'DB_CLASS_' || UnitType FROM Units ;
