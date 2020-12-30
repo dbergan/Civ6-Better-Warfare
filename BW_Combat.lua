@@ -11,7 +11,7 @@ function dump(o)
    end
 end
 
-function GetAdjacentPlots(plot, includeCenter)
+function BW_GetAdjacentPlots(plot, includeCenter)
 	local iX 	= plot:GetX()
 	local iY 	= plot:GetY()
 
@@ -39,12 +39,12 @@ function BW_Combat(combatResult)
 		local attackerID 		= combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.ID].id
 		local attackerPlayerID 		= combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.ID].player
 		local attackerPlot	= Map.GetPlotXYWithRangeCheck(combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.LOCATION].x, combatResult[CombatResultParameters.ATTACKER][CombatResultParameters.LOCATION].y)
-		local attackerAdjacentPlots = GetAdjacentPlots(attackerPlot, true)
+		local attackerAdjacentPlots = BW_GetAdjacentPlots(attackerPlot, true)
 
 		local defenderID 		= combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.ID].id
 		local defenderPlayerID 		= combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.ID].player
 		local defenderPlot	= Map.GetPlotXYWithRangeCheck(combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.LOCATION].x, combatResult[CombatResultParameters.DEFENDER][CombatResultParameters.LOCATION].y)
-		local defenderAdjacentPlots = GetAdjacentPlots(defenderPlot, true)
+		local defenderAdjacentPlots = BW_GetAdjacentPlots(defenderPlot, true)
 
 		-- Units next to defender get XP (but not the attacker and defender, naturally)
 		for i, plot in ipairs(defenderAdjacentPlots) do
