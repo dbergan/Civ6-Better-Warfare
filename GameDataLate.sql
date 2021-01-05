@@ -1,7 +1,7 @@
 -- ***************** TESTING *****************************
 -- Takes all randomness out of combat (damage is always 30 among equal CS units)
-UPDATE GlobalParameters SET Value = 30 WHERE Name = 'COMBAT_BASE_DAMAGE' ;
-UPDATE GlobalParameters SET Value = 0 WHERE Name = 'COMBAT_MAX_EXTRA_DAMAGE' ;
+-- UPDATE GlobalParameters SET Value = 30 WHERE Name = 'COMBAT_BASE_DAMAGE' ;	
+-- UPDATE GlobalParameters SET Value = 0 WHERE Name = 'COMBAT_MAX_EXTRA_DAMAGE' ;
 -- ***************** TESTING *****************************
 
 -- Set baseline flanking to 1 CS because modifiers are all in terms of percentages (standard = 2)
